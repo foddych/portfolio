@@ -2,7 +2,7 @@
   const projects = {
     petrol: {
       title: "Petrol-Люкс",
-      icon: "assets/icons/petrol.svg",
+      icon: "assets/icons/petrol.png",
       desc: "Современный one-pager сети АЗС: цены, станции и спокойная асфальтово-янтарная подача.",
       intro:
         "Нужно было обновить сайт сети АЗС так, чтобы он сразу вызывал доверие: показать актуальные цены, адреса станций и путь к контакту. Главная задача — выделить бренд на фоне типовых шаблонов АЗС и сделать страницу удобной и на телефоне.",
@@ -17,24 +17,12 @@
         ["Год", "2025"],
       ],
       shots: [
-        "assets/works/petrol/00-desk-preview.png",
-        "assets/works/petrol/00-mobile-preview.png",
-        "assets/works/petrol/01-full-desktop.png",
-        "assets/works/petrol/02-hero-desktop.png",
-        "assets/works/petrol/03-hero-mobile.png",
-        "assets/works/petrol/04-prices-desktop.png",
-        "assets/works/petrol/05-prices-mobile.png",
-        "assets/works/petrol/06-stations-desktop.png",
-        "assets/works/petrol/07-stations-mobile.png",
-        "assets/works/petrol/08-about-desktop.png",
-        "assets/works/petrol/09-corporate-desktop.png",
-        "assets/works/petrol/10-contacts-desktop.png",
-        "assets/works/petrol/11-mobile-main.png",
+        "assets/works/petrol/00-full-desktop.png",
       ],
     },
     globit: {
       title: "Glob-IT",
-      icon: "assets/icons/globit.svg",
+      icon: "assets/icons/globit.png",
       desc: "Лавандовый корпоративный редизайн: bento-сетка, услуги, тарифы и собственный продукт Церера.",
       intro:
         "Задача — разработать сайт, который повысит узнаваемость бренда и конверсию. При создании современного профессионального сайта главной целью было выделить компанию на фоне конкурентов и привлечь новых клиентов.",
@@ -49,20 +37,12 @@
         ["Год", "2025"],
       ],
       shots: [
-        "assets/works/globit/01-hero.png",
-        "assets/works/globit/02-stats.png",
-        "assets/works/globit/03-advantages.png",
-        "assets/works/globit/04-services.png",
-        "assets/works/globit/05-tariffs.png",
-        "assets/works/globit/06-cerera.png",
-        "assets/works/globit/07-clients.png",
-        "assets/works/globit/08-reviews.png",
-        "assets/works/globit/09-contacts.png",
+        "assets/works/globit/00-full-desktop.png",
       ],
     },
     inmis: {
       title: "Inmis",
-      icon: "assets/icons/inmis.svg",
+      icon: "assets/icons/inmis.png",
       desc: "Медтех-лендинг: продукты, услуги и понятный путь для B2B-аудитории.",
       intro:
         "Нужно было собрать сайт медтех-продуктов, который быстро объясняет ценность решений и ведёт к заявке. Важно было показать линейку продуктов и сервисов без перегруза для B2B-аудитории.",
@@ -77,21 +57,12 @@
         ["Год", "2025"],
       ],
       shots: [
-        "assets/works/inmis/01-home-full.png",
-        "assets/works/inmis/02-hero-desktop.png",
-        "assets/works/inmis/03-hero-mobile.png",
-        "assets/works/inmis/04-services.png",
-        "assets/works/inmis/05-products.png",
-        "assets/works/inmis/06-products-mobile.png",
-        "assets/works/inmis/07-egisz.png",
-        "assets/works/inmis/08-ullo.png",
-        "assets/works/inmis/09-contacts.png",
-        "assets/works/inmis/10-home-mobile.png",
+        "assets/works/inmis/00-full-desktop.png",
       ],
     },
     profite: {
       title: "ProfiTE",
-      icon: "assets/icons/profite.svg",
+      icon: "assets/icons/profite.png",
       desc: "B2B-сайт интегратора 1С с услугами, калькулятором и быстрым контактом.",
       intro:
         "Нужно было обновить сайт интегратора 1С так, чтобы клиент быстро понимал услуги и мог оценить маршрут обновления. Главный акцент — доверие франчайзи и короткий путь к заявке.",
@@ -106,49 +77,152 @@
         ["Год", "2025"],
       ],
       shots: [
-        "assets/works/profite/01-home-desktop.png",
-        "assets/works/profite/02-home-mobile.png",
-        "assets/works/profite/03-services.png",
-        "assets/works/profite/05-calculator.png",
-        "assets/works/profite/06-calculator-ui.png",
-        "assets/works/profite/07-its.png",
-        "assets/works/profite/08-its-mobile.png",
-        "assets/works/profite/04-contact.png",
-        "assets/works/profite/13-worktime.png",
-        "assets/works/profite/09-map.png",
-        "assets/works/profite/12-map-mobile.png",
-        "assets/works/profite/10-kit-hero.png",
-        "assets/works/profite/11-kit.png",
+        "assets/works/profite/00-full-desktop.png",
       ],
     },
-    bots: {
-      title: "Бот ProfiTE",
-      icon: "assets/icons/bots.svg",
-      desc: "Калькулятор маршрута обновления 1С в Telegram и Max.",
+    zoomir: {
+      title: "Зоомир",
+      icon: "assets/icons/zoomir.png",
+      desc: "Редизайн зоомагазина: ассортимент, витрина и спокойный фирменный тон.",
       intro:
-        "Нужно было сделать бота, который быстро считает маршрут обновления 1С и даёт ориентир по срокам и стоимости — без звонка на первом шаге.",
+        "Нужно было обновить сайт зоомагазина Зоомир так, чтобы он сразу выглядел современно и вызывал доверие: показать ассортимент, маршрут покупки и контакты. Главная задача — уйти от устаревшей подачи и собрать чистый one-pager под бренд.",
       problems:
-        "Клиенту сложно понять, сколько шагов до FINAL и во сколько обойдётся обновление. Обычный сайт не закрывает диалог «здесь и сейчас», особенно в мессенджерах.",
+        "Старый сайт не держал фокус: категории и товары терялись, на мобильном сложно ориентироваться, а первый экран не объяснял ценность магазина. Нужна ясная структура от оффера к ассортименту и заявке.",
       solution:
-        "Собрал сценарий для Telegram и Max: превью бота, диалог, расчёт маршрута и посадочные экраны. Пользователь получает понятный результат и может сразу перейти к заявке.",
+        "Собрал светлый редизайн с лавандово-синей палитрой, сильным hero, блоком ассортимента, туром по магазину и быстрым контактом. Визуал и адаптив ведут посетителя от атмосферы бренда к действию.",
       meta: [
-        ["Клиент", "ProfiTE"],
-        ["Тип", "Telegram · Max"],
-        ["Работы", "Бот, сценарий"],
+        ["Клиент", "Зоомир"],
+        ["Тип", "Зоомагазин · редизайн"],
+        ["Работы", "UI, one-pager"],
         ["Год", "2025"],
       ],
       shots: [
-        "assets/works/bots/01-telegram-desktop.png",
-        "assets/works/bots/02-telegram-mobile.png",
-        "assets/works/bots/05-telegram-landing.png",
-        "assets/works/bots/03-max-desktop.png",
-        "assets/works/bots/04-max-mobile.png",
+        "assets/works/zoomir/00-full-desktop.png",
       ],
     },
   };
 
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
+
+  const services = {
+    redesign: {
+      title: "Редизайн сайтов",
+      tag: "Сайты",
+      icon: "ico-redesign",
+      lead: "Обновляю внешний вид, структуру и путь пользователя — чтобы сайт выглядел современно и вёл к заявке.",
+      test: "1–2 дня",
+      full: "3–7 дней",
+      price: "Индивидуально",
+      items: [
+        "Анализ текущего сайта и узких мест",
+        "Новая структура блоков и иерархия",
+        "Аккуратный визуал под бренд",
+        "Адаптив под телефон и десктоп",
+      ],
+    },
+    landing: {
+      title: "Лендинги под оффер",
+      tag: "Лендинг",
+      icon: "ico-landing",
+      lead: "Собираю одну страницу под конкретную задачу: оффер, доверие и быстрый контакт.",
+      test: "1–2 дня",
+      full: "3–7 дней",
+      price: "Индивидуально",
+      items: [
+        "Hero и оффер под вашу аудиторию",
+        "Блоки преимуществ, услуг и доказательств",
+        "CTA и удобный путь к заявке",
+        "Адаптив и аккуратная типографика",
+      ],
+    },
+    shop: {
+      title: "Магазины и бренды",
+      tag: "Бренд",
+      icon: "ico-dog",
+      lead: "Делаю витрину бренда или магазина: каталог, атмосфера и понятный путь к покупке.",
+      test: "1–2 дня",
+      full: "3–7 дней",
+      price: "Индивидуально",
+      items: [
+        "Подача бренда и ассортимента",
+        "Карточки товаров / направлений",
+        "Навигация и акценты на ключевые разделы",
+        "Адаптив и визуальный ритм",
+      ],
+    },
+    bots: {
+      title: "Боты Telegram и Max",
+      tag: "Боты",
+      icon: "ico-bots",
+      lead: "Собираю ботов под заявки, FAQ и сценарии — чтобы клиент быстро получал ответ.",
+      test: "1–2 дня",
+      full: "3–7 дней",
+      price: "Индивидуально",
+      items: [
+        "Сценарий диалога под задачу",
+        "Приём заявок и уведомления",
+        "FAQ / меню / кнопки",
+        "Простая админка или связка с чатом",
+      ],
+    },
+  };
+
+  const serviceModal = document.getElementById("service-modal");
+  const serviceTitle = document.getElementById("service-title");
+  const serviceTag = document.getElementById("service-tag");
+  const serviceLead = document.getElementById("service-lead");
+  const serviceTest = document.getElementById("service-test");
+  const serviceFull = document.getElementById("service-full");
+  const servicePrice = document.getElementById("service-price");
+  const serviceList = document.getElementById("service-list");
+  const serviceNote = document.getElementById("service-note");
+  const serviceIcon = document.getElementById("service-icon");
+  const serviceTg = document.getElementById("service-tg");
+
+  const closeService = () => {
+    if (!serviceModal || serviceModal.hidden) return;
+    serviceModal.hidden = true;
+    document.body.classList.remove("service-open");
+  };
+
+  const openService = (id) => {
+    const data = services[id];
+    if (!data || !serviceModal) return;
+    serviceTag.textContent = data.tag;
+    serviceTitle.textContent = data.title;
+    serviceLead.textContent = data.lead;
+    serviceTest.textContent = data.test;
+    serviceFull.textContent = data.full;
+    servicePrice.textContent = data.price;
+    serviceList.innerHTML = data.items.map((item) => `<li>${item}</li>`).join("");
+    serviceNote.textContent =
+      "Срок зависит от сложности. Тестовый вариант — обычно 1–2 дня, готовый — от 3 до 7 дней. Цена и объём обговариваются индивидуально.";
+    serviceIcon.innerHTML = `<span class="ico ${data.icon}" aria-hidden="true"></span>`;
+    if (serviceTg) {
+      serviceTg.href = `https://t.me/foddy1337?text=${encodeURIComponent(
+        `Привет! Интересует услуга: ${data.title}`
+      )}`;
+    }
+    serviceModal.hidden = false;
+    document.body.classList.add("service-open");
+  };
+
+  document.addEventListener("click", (e) => {
+    const svc = e.target.closest("[data-service]");
+    if (svc) {
+      e.preventDefault();
+      openService(svc.getAttribute("data-service"));
+      return;
+    }
+    if (e.target.closest("[data-close-service]")) {
+      closeService();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeService();
+  });
 
   const toast = document.getElementById("toast");
   let toastTimer;
@@ -176,7 +250,23 @@
 
   document.querySelector(".theme-toggle")?.addEventListener("click", () => {
     document.body.classList.toggle("is-dark");
+    try {
+      localStorage.setItem(
+        "portfolio-theme",
+        document.body.classList.contains("is-dark") ? "dark" : "light"
+      );
+    } catch {
+      /* ignore */
+    }
   });
+
+  try {
+    if (localStorage.getItem("portfolio-theme") === "dark") {
+      document.body.classList.add("is-dark");
+    }
+  } catch {
+    /* ignore */
+  }
 
   const home = document.getElementById("panel-home");
   const projectPanel = document.getElementById("panel-project");
