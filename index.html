@@ -1,80 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru" data-skin="clean">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>foddyzorich — портфолио</title>
   <meta name="description" content="Портфолио: редизайн сайтов, лендинги, магазины и бренды.">
-  <script>
-    (function () {
-      try {
-        var skin = localStorage.getItem("foddy-skin");
-        if (skin === "editorial" || skin === "bold" || skin === "clean") {
-          document.documentElement.setAttribute("data-skin", skin);
-          document.documentElement.dataset.skinPicked = "1";
-        } else {
-          document.documentElement.dataset.skinPicked = "0";
-        }
-      } catch (e) {
-        document.documentElement.dataset.skinPicked = "0";
-      }
-    })();
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="style-gate" id="style-gate" hidden>
-    <div class="style-gate-panel">
-      <p class="style-gate-brand">foddyzorich</p>
-      <h1 class="style-gate-title">Какой интерфейс запустим?</h1>
-      <p class="style-gate-sub">Три настроения одного портфолио. Потом можно сменить в шапке.</p>
-      <div class="style-cards" role="list">
-        <button class="style-card" type="button" data-skin-pick="clean" role="listitem">
-          <span class="style-preview is-clean" aria-hidden="true">
-            <span class="sp-nav"></span>
-            <span class="sp-line sp-lg"></span>
-            <span class="sp-line"></span>
-            <span class="sp-row"></span>
-            <span class="sp-row"></span>
-          </span>
-          <span class="style-card-copy">
-            <strong>Clean</strong>
-            <small>Спокойный app-стиль</small>
-          </span>
-        </button>
-        <button class="style-card" type="button" data-skin-pick="editorial" role="listitem">
-          <span class="style-preview is-editorial" aria-hidden="true">
-            <span class="sp-nav"></span>
-            <span class="sp-line sp-serif sp-lg"></span>
-            <span class="sp-line"></span>
-            <span class="sp-row"></span>
-            <span class="sp-row"></span>
-          </span>
-          <span class="style-card-copy">
-            <strong>Editorial</strong>
-            <small>Журнальная типографика</small>
-          </span>
-        </button>
-        <button class="style-card" type="button" data-skin-pick="bold" role="listitem">
-          <span class="style-preview is-bold" aria-hidden="true">
-            <span class="sp-nav"></span>
-            <span class="sp-line sp-lg"></span>
-            <span class="sp-line"></span>
-            <span class="sp-row"></span>
-            <span class="sp-row"></span>
-          </span>
-          <span class="style-card-copy">
-            <strong>Bold</strong>
-            <small>Контраст и энергия</small>
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-
   <header class="nav-bar">
     <nav class="nav-icons" aria-label="Навигация">
       <a href="#top" class="nav-icon is-active" data-panel="home" aria-label="Главная">
@@ -91,9 +27,6 @@
       </a>
     </nav>
     <div class="nav-actions">
-      <button class="skin-toggle" type="button" id="skin-toggle" aria-label="Сменить интерфейс" title="Сменить интерфейс">
-        <span class="skin-toggle-dot" aria-hidden="true"></span>
-      </button>
       <button class="theme-toggle" type="button" aria-label="Тема">
         <span class="ico ico-theme" aria-hidden="true"></span>
       </button>

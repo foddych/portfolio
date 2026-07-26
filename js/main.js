@@ -105,54 +105,6 @@
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 
-  const SKIN_KEY = "foddy-skin";
-  const SKINS = new Set(["clean", "editorial", "bold"]);
-  const styleGate = document.getElementById("style-gate");
-  const root = document.documentElement;
-
-  const applySkin = (skin) => {
-    const next = SKINS.has(skin) ? skin : "clean";
-    root.setAttribute("data-skin", next);
-    document.querySelectorAll("[data-skin-pick]").forEach((btn) => {
-      btn.classList.toggle("is-active", btn.getAttribute("data-skin-pick") === next);
-    });
-    return next;
-  };
-
-  const closeStyleGate = () => {
-    if (!styleGate) return;
-    styleGate.hidden = true;
-    document.body.classList.remove("is-picking");
-  };
-
-  const openStyleGate = () => {
-    if (!styleGate) return;
-    styleGate.hidden = false;
-    document.body.classList.add("is-picking");
-    applySkin(root.getAttribute("data-skin") || "clean");
-  };
-
-  const pickSkin = (skin) => {
-    const next = applySkin(skin);
-    try {
-      localStorage.setItem(SKIN_KEY, next);
-    } catch (_) {}
-    root.dataset.skinPicked = "1";
-    closeStyleGate();
-  };
-
-  document.querySelectorAll("[data-skin-pick]").forEach((btn) => {
-    btn.addEventListener("click", () => pickSkin(btn.getAttribute("data-skin-pick")));
-  });
-
-  document.getElementById("skin-toggle")?.addEventListener("click", () => {
-    if (styleGate && !styleGate.hidden) closeStyleGate();
-    else openStyleGate();
-  });
-
-  if (root.dataset.skinPicked !== "1") openStyleGate();
-  else applySkin(root.getAttribute("data-skin") || "clean");
-
   const services = {
     redesign: {
       title: "Редизайн сайтов",
