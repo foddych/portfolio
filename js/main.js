@@ -2,7 +2,7 @@
   const projects = {
     petrol: {
       title: "Petrol-Люкс",
-      icon: "assets/icons/petrol.png",
+      icon: "assets/icons/petrol.webp",
       desc: "Современный one-pager сети АЗС: цены, станции и спокойная асфальтово-янтарная подача.",
       intro:
         "Нужно было обновить сайт сети АЗС так, чтобы он сразу вызывал доверие: показать актуальные цены, адреса станций и путь к контакту. Главная задача — выделить бренд на фоне типовых шаблонов АЗС и сделать страницу удобной и на телефоне.",
@@ -17,11 +17,11 @@
         ["Год", "2025"],
       ],
       shots: [
-        "assets/works/petrol/00-full-desktop.png",
+        "assets/works/petrol/00-full-desktop.webp",
       ],
       beforeAfter: {
-        before: "assets/works/petrol/before-desktop.png",
-        after: "assets/works/petrol/00-full-desktop.png",
+        before: "assets/works/petrol/before-desktop.webp",
+        after: "assets/works/petrol/00-full-desktop.webp",
         issues: [
           "Устаревший шаблон: 3D-баннер и таблица цен не вызывают доверия",
           "Цены в сухой таблице — нет акцента и удобного сравнения",
@@ -32,7 +32,7 @@
     },
     globit: {
       title: "Glob-IT",
-      icon: "assets/icons/globit.png",
+      icon: "assets/icons/globit.webp",
       desc: "Лавандовый корпоративный редизайн: bento-сетка, услуги, тарифы и собственный продукт Церера.",
       intro:
         "Задача — разработать сайт, который повысит узнаваемость бренда и конверсию. При создании современного профессионального сайта главной целью было выделить компанию на фоне конкурентов и привлечь новых клиентов.",
@@ -47,11 +47,11 @@
         ["Год", "2025"],
       ],
       shots: [
-        "assets/works/globit/00-full-desktop.png",
+        "assets/works/globit/00-full-desktop.webp",
       ],
       beforeAfter: {
-        before: "assets/works/globit/before-desktop.png",
-        after: "assets/works/globit/00-full-desktop.png",
+        before: "assets/works/globit/before-desktop.webp",
+        after: "assets/works/globit/00-full-desktop.webp",
         issues: [
           "Тёмный стоковый hero не объясняет ценность и не цепляет",
           "Шапка перегружена контактами — сложно сфокусироваться",
@@ -62,7 +62,7 @@
     },
     inmis: {
       title: "Inmis",
-      icon: "assets/icons/inmis.png",
+      icon: "assets/icons/inmis.webp",
       desc: "Медтех-лендинг: продукты, услуги и понятный путь для B2B-аудитории.",
       intro:
         "Нужно было собрать сайт медтех-продуктов, который быстро объясняет ценность решений и ведёт к заявке. Важно было показать линейку продуктов и сервисов без перегруза для B2B-аудитории.",
@@ -77,11 +77,11 @@
         ["Год", "2025"],
       ],
       shots: [
-        "assets/works/inmis/00-full-desktop.png",
+        "assets/works/inmis/00-full-desktop.webp",
       ],
       beforeAfter: {
-        before: "assets/works/inmis/before-desktop.png",
-        after: "assets/works/inmis/00-full-desktop.png",
+        before: "assets/works/inmis/before-desktop.webp",
+        after: "assets/works/inmis/00-full-desktop.webp",
         issues: [
           "Hero без CTA — непонятно, что делать дальше",
           "Иллюстрация и заголовок есть, а ценность решений не раскрыта",
@@ -92,7 +92,7 @@
     },
     profite: {
       title: "ProfiTE",
-      icon: "assets/icons/profite.png",
+      icon: "assets/icons/profite.webp",
       desc: "B2B-сайт интегратора 1С с услугами, калькулятором и быстрым контактом.",
       intro:
         "Нужно было обновить сайт интегратора 1С так, чтобы клиент быстро понимал услуги и мог оценить маршрут обновления. Главный акцент — доверие франчайзи и короткий путь к заявке.",
@@ -107,11 +107,11 @@
         ["Год", "2025"],
       ],
       shots: [
-        "assets/works/profite/00-full-desktop.png",
+        "assets/works/profite/00-full-desktop.webp",
       ],
       beforeAfter: {
-        before: "assets/works/profite/before-desktop.png",
-        after: "assets/works/profite/00-full-desktop.png",
+        before: "assets/works/profite/before-desktop.webp",
+        after: "assets/works/profite/00-full-desktop.webp",
         issues: [
           "Форма входа и оранжевое меню съедают внимание вместо оффера",
           "Баннеры и битые картинки снижают доверие",
@@ -122,7 +122,7 @@
     },
     zoomir: {
       title: "Зоомир",
-      icon: "assets/icons/zoomir.png",
+      icon: "assets/icons/zoomir.webp",
       desc: "Редизайн зоомагазина: ассортимент, витрина и спокойный фирменный тон.",
       intro:
         "Нужно было обновить сайт зоомагазина Зоомир так, чтобы он сразу выглядел современно и вызывал доверие: показать ассортимент, маршрут покупки и контакты. Главная задача — уйти от устаревшей подачи и собрать чистый one-pager под бренд.",
@@ -137,11 +137,11 @@
         ["Год", "2025"],
       ],
       shots: [
-        "assets/works/zoomir/00-full-desktop.png",
+        "assets/works/zoomir/00-full-desktop.webp",
       ],
       beforeAfter: {
-        before: "assets/works/zoomir/before-live.png",
-        after: "assets/works/zoomir/00-full-desktop.png",
+        before: "assets/works/zoomir/before-live.webp",
+        after: "assets/works/zoomir/00-full-desktop.webp",
         issues: [
           "Hero шаблонный: стоковое фото корги и декоративные фигуры вместо атмосферы магазина",
           "Нет цифр и доказательств на первом экране — только общий текст",
@@ -338,8 +338,12 @@
 
   const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
 
-  const shotHtml = (src, alt) =>
-    `<figure class="shot"><img src="${src}" alt="${alt}" loading="lazy"></figure>`;
+  const shotHtml = (src, alt, { eager = false } = {}) => {
+    const load = eager
+      ? 'loading="eager" fetchpriority="high"'
+      : 'loading="lazy"';
+    return `<figure class="shot"><img src="${src}" alt="${alt}" ${load} decoding="async"></figure>`;
+  };
 
   const setBaView = (mode) => {
     if (!baBlock || baBlock.hidden) return;
@@ -379,12 +383,16 @@
     if (shotFrame) shotFrame.hidden = true;
 
     baBefore.innerHTML = `
-      ${shotHtml(ba.before, `${data.title} — до`)}
+      ${shotHtml(ba.before, `${data.title} — до`, { eager: true })}
       <div class="ba-notes">
         <p class="ba-notes-title">Что не так</p>
         <ul>${issues}</ul>
       </div>`;
     baAfter.innerHTML = shotHtml(ba.after, `${data.title} — после`);
+    // Warm after image while user reads «До»
+    const warm = new Image();
+    warm.decoding = "async";
+    warm.src = ba.after;
     setBaView("before");
   };
 
@@ -416,7 +424,7 @@
       .map(([label, value]) => `<div><span>${label}</span><strong>${value}</strong></div>`)
       .join("");
 
-    logoEl.innerHTML = `<img src="${data.icon}" alt="">`;
+    logoEl.innerHTML = `<img src="${data.icon}" alt="" width="48" height="48" decoding="async">`;
     logoEl.className = "project-logo";
     titleEl.textContent = data.title;
     descEl.textContent = data.desc;
@@ -427,7 +435,7 @@
     galleryEl.innerHTML = data.shots
       .map((src, i) => {
         const tall = /mobile|preview-mobile|max-mobile/i.test(src);
-        return `<figure class="shot ${tall ? "is-tall" : ""}"><img src="${src}" alt="${data.title} — кадр ${i + 1}" loading="lazy"></figure>`;
+        return `<figure class="shot ${tall ? "is-tall" : ""}"><img src="${src}" alt="${data.title} — кадр ${i + 1}" loading="lazy" decoding="async"></figure>`;
       })
       .join("");
 
@@ -438,7 +446,7 @@
       .map(
         ([key, item]) => `
         <button class="row" type="button" data-open="${key}">
-          <span class="row-icon"><img src="${item.icon}" alt=""></span>
+          <span class="row-icon"><img src="${item.icon}" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
           <span class="row-text">
             <strong>${item.title}</strong>
             <small>${item.meta[1][1]}</small>
