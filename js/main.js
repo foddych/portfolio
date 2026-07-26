@@ -401,7 +401,7 @@
   const solutionEl = document.getElementById("project-solution");
   const galleryEl = document.getElementById("project-gallery");
   const otherEl = document.getElementById("other-projects");
-  let busy = false;
+  let navGen = 0;
   let currentId = null;
 
   const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
@@ -421,9 +421,10 @@
     });
   };
 
-  const playReveals = async () => {
+  const playReveals = async (gen) => {
     const items = [...projectPanel.querySelectorAll(".case-reveal")];
     for (let i = 0; i < items.length; i += 1) {
+      if (gen !== navGen) return;
       items[i].classList.add("is-in");
       await wait(70);
     }
@@ -471,19 +472,23 @@
   };
 
   const showHome = async ({ push = true } = {}) => {
-    if (busy) return;
-    busy = true;
+    const gen = ++navGen;
 
+    projectPanel.classList.remove("is-leaving", "is-entering");
     if (!projectPanel.hidden) {
       projectPanel.classList.add("is-leaving");
-      await wait(240);
+      await wait(180);
+      if (gen !== navGen) return;
       projectPanel.hidden = true;
       projectPanel.classList.remove("is-leaving");
+    } else {
+      projectPanel.hidden = true;
     }
 
     applyLayout(currentLayout);
     const layoutRoot = activeLayoutRoot();
     if (layoutRoot) {
+      layoutRoot.classList.remove("is-leaving");
       layoutRoot.classList.add("is-entering");
       void layoutRoot.offsetWidth;
       layoutRoot.classList.remove("is-entering");
@@ -496,12 +501,11 @@
       window.history.pushState({ view: "home" }, "", url);
     }
     window.scrollTo({ top: 0, behavior: "smooth" });
-    busy = false;
   };
 
   const openProject = async (id, { push = true } = {}) => {
-    if (!projects[id] || busy) return;
-    busy = true;
+    if (!projects[id]) return;
+    const gen = ++navGen;
 
     const switching = !projectPanel.hidden && currentId && currentId !== id;
     const fromHome = projectPanel.hidden;
@@ -510,7 +514,8 @@
       const layoutRoot = activeLayoutRoot();
       if (layoutRoot) {
         layoutRoot.classList.add("is-leaving");
-        await wait(220);
+        await wait(180);
+        if (gen !== navGen) return;
         layoutRoot.hidden = true;
         layoutRoot.classList.remove("is-leaving");
       }
@@ -522,7 +527,8 @@
       projectPanel.classList.remove("is-entering");
     } else if (switching) {
       projectPanel.classList.add("is-leaving");
-      await wait(220);
+      await wait(180);
+      if (gen !== navGen) return;
       fillProject(id);
       resetReveals();
       projectPanel.classList.remove("is-leaving");
@@ -538,6 +544,8 @@
       });
     }
 
+    if (gen !== navGen) return;
+
     currentId = id;
     setNavActive("project");
     if (push) {
@@ -545,8 +553,8 @@
     }
     window.scrollTo({ top: 0, behavior: "auto" });
     await wait(40);
-    await playReveals();
-    busy = false;
+    if (gen !== navGen) return;
+    await playReveals(gen);
   };
 
   document.addEventListener("click", (e) => {
