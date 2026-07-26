@@ -452,7 +452,7 @@ button { font: inherit; color: inherit; }
 .cta p { margin-bottom: 1rem; }
 
 .foot {
-  padding: 0.35rem 0.75rem 0.85rem;
+  padding: 0.2rem 0.75rem 1rem;
   text-align: center;
 }
 
@@ -461,7 +461,7 @@ button { font: inherit; color: inherit; }
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  margin-bottom: 0.85rem;
+  margin-bottom: 1rem;
   padding: 0.55rem 0.35rem;
   color: var(--muted);
   font-size: 0.9rem;
@@ -513,69 +513,56 @@ button { font: inherit; color: inherit; }
   color: #fff;
 }
 
-.foot-meta {
+.foot-sign {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.55rem;
-  padding-top: 0.15rem;
+  gap: 0.35rem;
+  margin: 0 0.2rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid var(--line);
 }
 
 .foot .copy {
   margin: 0;
-  color: #a3a3a3;
-  font-size: 0.78rem;
+  color: #b0b0b0;
+  font-size: 0.74rem;
+  letter-spacing: 0.01em;
 }
 
 .made-by {
   display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
-  background: var(--soft);
+  align-items: baseline;
+  gap: 0.28rem;
   color: var(--muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.01em;
-  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.made-by-mark {
-  width: 0.42rem;
-  height: 0.42rem;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 0 3px var(--green-bg);
-  flex-shrink: 0;
-}
-
-.made-by-label {
+  font-size: 0.8rem;
   font-weight: 500;
+  letter-spacing: 0.005em;
+  transition: color 0.2s ease;
 }
 
-.made-by-name {
-  color: var(--ink);
+.made-by em {
+  font-style: normal;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  color: var(--ink);
+  letter-spacing: -0.02em;
   background-image: linear-gradient(currentColor, currentColor);
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 0% 1.5px;
-  transition: background-size 0.25s ease;
+  transition: background-size 0.28s ease, color 0.2s ease;
 }
 
 .made-by:hover {
   color: var(--ink);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
-.made-by:hover .made-by-name {
+.made-by:hover em {
   background-size: 100% 1.5px;
 }
 
-body.is-dark .made-by:hover {
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+body.is-dark .foot .copy {
+  color: #6f6f6f;
 }
 
 /* Project detail — like Subtle Folio case page */
