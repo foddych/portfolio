@@ -170,8 +170,10 @@
     const next = LAYOUTS.has(layout) ? layout : "clean";
     currentLayout = next;
     root.setAttribute("data-layout", next);
+    const projectOpen = !document.getElementById("panel-project")?.hidden;
     document.querySelectorAll("[data-layout-root]").forEach((el) => {
-      el.hidden = el.getAttribute("data-layout-root") !== next;
+      if (projectOpen) el.hidden = true;
+      else el.hidden = el.getAttribute("data-layout-root") !== next;
     });
     document.querySelectorAll("[data-layout-pick]").forEach((btn) => {
       btn.classList.toggle("is-active", btn.getAttribute("data-layout-pick") === next);
@@ -216,7 +218,11 @@
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && root.dataset.layoutPicked === "1") closeLayoutGate();
+    if (e.key !== "Escape") return;
+    if (layoutGate && !layoutGate.hidden && root.dataset.layoutPicked === "1") {
+      closeLayoutGate();
+      return;
+    }
   });
 
   if (root.dataset.layoutPicked !== "1") openLayoutGate();
