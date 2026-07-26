@@ -19,6 +19,19 @@
       shots: [
         "assets/works/petrol/00-full-desktop.png",
       ],
+      beforeAfter: {
+        theme: "petrol",
+        url: "petrol-lux.ru",
+        beforeTitle: "Сеть АЗС Petrol-Люкс",
+        beforeText: "Цены, адреса и контакты разнесены по страницам. Первый экран не держит внимание.",
+        cards: [
+          ["Цены", "Таблица без акцента"],
+          ["Станции", "Список адресов"],
+          ["Акции", "Мелкий баннер"],
+          ["Контакты", "Форма внизу"],
+        ],
+        after: "assets/works/petrol/00-full-desktop.png",
+      },
     },
     globit: {
       title: "Glob-IT",
@@ -39,6 +52,19 @@
       shots: [
         "assets/works/globit/00-full-desktop.png",
       ],
+      beforeAfter: {
+        theme: "globit",
+        url: "glob-it.ru",
+        beforeTitle: "Glob-IT — IT-услуги",
+        beforeText: "Услуги 1С и продукт Церера терялись в длинном тексте и устаревшей сетке.",
+        cards: [
+          ["Услуги", "Список ссылками"],
+          ["Тарифы", "Без сравнения"],
+          ["Церера", "Отдельная ссылка"],
+          ["Контакты", "Подвал"],
+        ],
+        after: "assets/works/globit/00-full-desktop.png",
+      },
     },
     inmis: {
       title: "Inmis",
@@ -59,6 +85,19 @@
       shots: [
         "assets/works/inmis/00-full-desktop.png",
       ],
+      beforeAfter: {
+        theme: "inmis",
+        url: "inmis.ru",
+        beforeTitle: "Inmis — медтех решения",
+        beforeText: "Продукты и ЕГИСЗ/Улло смешаны в плотном тексте без ясной иерархии.",
+        cards: [
+          ["Продукты", "Длинный абзац"],
+          ["Услуги", "Маркированный список"],
+          ["Документы", "Скачать PDF"],
+          ["Заявка", "Email в подвале"],
+        ],
+        after: "assets/works/inmis/00-full-desktop.png",
+      },
     },
     profite: {
       title: "ProfiTE",
@@ -79,6 +118,19 @@
       shots: [
         "assets/works/profite/00-full-desktop.png",
       ],
+      beforeAfter: {
+        theme: "profite",
+        url: "profite.ru",
+        beforeTitle: "ProfiTE — интегратор 1С",
+        beforeText: "Услуги, ИТС и контакты размазаны. Нет понятного расчёта обновлений.",
+        cards: [
+          ["1С:ИТС", "Текст-описание"],
+          ["Услуги", "Меню слева"],
+          ["Новости", "Лента дат"],
+          ["Контакты", "Карта отдельно"],
+        ],
+        after: "assets/works/profite/00-full-desktop.png",
+      },
     },
     zoomir: {
       title: "Зоомир",
@@ -99,6 +151,19 @@
       shots: [
         "assets/works/zoomir/00-full-desktop.png",
       ],
+      beforeAfter: {
+        theme: "zoomir",
+        url: "zoomir.ru",
+        beforeTitle: "Зоомир — зоомагазин",
+        beforeText: "Категории и товары терялись, первый экран не объяснял ценность магазина.",
+        cards: [
+          ["Каталог", "Много мелких ссылок"],
+          ["Акции", "Мигающий баннер"],
+          ["Доставка", "Текст в подвале"],
+          ["Контакты", "Телефон картинкой"],
+        ],
+        after: "assets/works/zoomir/00-full-desktop.png",
+      },
     },
   };
 
@@ -279,10 +344,85 @@
   const solutionEl = document.getElementById("project-solution");
   const galleryEl = document.getElementById("project-gallery");
   const otherEl = document.getElementById("other-projects");
+  const baBlock = document.getElementById("project-ba");
+  const baBefore = document.getElementById("project-ba-before");
+  const baAfter = document.getElementById("project-ba-after");
   let busy = false;
   let currentId = null;
 
   const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
+
+  const renderBeforeMock = (ba) => {
+    const cards = (ba.cards || [])
+      .map(
+        ([title, text]) =>
+          `<div class="ba-mock-card"><b>${title}</b><i>${text}</i></div>`
+      )
+      .join("");
+
+    return `
+      <div class="ba-mock is-${ba.theme}">
+        <div class="ba-mock-bar" aria-hidden="true">
+          <span class="ba-mock-dot"></span>
+          <span class="ba-mock-dot"></span>
+          <span class="ba-mock-dot"></span>
+          <span class="ba-mock-url">${ba.url}</span>
+        </div>
+        <div class="ba-mock-body">
+          <div class="ba-mock-nav">
+            <span>Главная</span>
+            <span>О компании</span>
+            <span>Услуги</span>
+            <span>Контакты</span>
+          </div>
+          <div class="ba-mock-hero">
+            <strong>${ba.beforeTitle}</strong>
+            <span>${ba.beforeText}</span>
+            <span class="ba-mock-cta">Подробнее</span>
+          </div>
+          <div class="ba-mock-grid">${cards}</div>
+        </div>
+      </div>
+      <p class="ba-caption">Условный вид до редизайна</p>`;
+  };
+
+  const setBaView = (mode) => {
+    if (!baBlock || baBlock.hidden) return;
+    const before = mode === "before";
+    baBlock.querySelectorAll(".ba-tab").forEach((tab) => {
+      const active = tab.getAttribute("data-ba") === mode;
+      tab.classList.toggle("is-active", active);
+      tab.setAttribute("aria-selected", active ? "true" : "false");
+    });
+    if (baBefore) {
+      baBefore.hidden = !before;
+      baBefore.classList.toggle("is-active", before);
+    }
+    if (baAfter) {
+      baAfter.hidden = before;
+      baAfter.classList.toggle("is-active", !before);
+    }
+  };
+
+  const fillBeforeAfter = (data) => {
+    if (!baBlock || !baBefore || !baAfter) return;
+    const ba = data.beforeAfter;
+    if (!ba) {
+      baBlock.hidden = true;
+      baBefore.innerHTML = "";
+      baAfter.innerHTML = "";
+      return;
+    }
+
+    baBlock.hidden = false;
+    baBefore.innerHTML = renderBeforeMock(ba);
+    baAfter.innerHTML = `
+      <figure class="shot">
+        <img src="${ba.after}" alt="${data.title} — после" loading="lazy">
+      </figure>
+      <p class="ba-caption">Готовый вариант</p>`;
+    setBaView("before");
+  };
 
   const setNavActive = (mode) => {
     document.querySelectorAll(".nav-icon").forEach((el, idx) => {
@@ -326,6 +466,8 @@
         return `<figure class="shot ${tall ? "is-tall" : ""}"><img src="${src}" alt="${data.title} — кадр ${i + 1}" loading="lazy"></figure>`;
       })
       .join("");
+
+    fillBeforeAfter(data);
 
     otherEl.innerHTML = Object.entries(projects)
       .filter(([key]) => key !== id)
@@ -420,8 +562,22 @@
     if (openBtn) {
       e.preventDefault();
       openProject(openBtn.getAttribute("data-open"));
+      return;
+    }
+
+    const baTab = e.target.closest(".ba-tab[data-ba]");
+    if (baTab && baBlock && !baBlock.hidden) {
+      setBaView(baTab.getAttribute("data-ba"));
     }
   });
+
+  document.getElementById("faq-list")?.addEventListener("toggle", (e) => {
+    const item = e.target;
+    if (!(item instanceof HTMLDetailsElement) || !item.open) return;
+    document.querySelectorAll("#faq-list .faq-item").forEach((el) => {
+      if (el !== item) el.open = false;
+    });
+  }, true);
 
   document.getElementById("back-home")?.addEventListener("click", () => showHome());
 

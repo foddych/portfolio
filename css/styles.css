@@ -718,6 +718,334 @@ body.is-dark .made-by:hover {
   }
 }
 
+/* REVIEWS */
+.reviews {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0 0.2rem;
+}
+
+.review {
+  margin: 0;
+  padding: 1rem 1.05rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--shell);
+}
+
+.review p {
+  margin: 0 0 0.85rem;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.review footer {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.review strong {
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.review span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+/* FAQ */
+.faq {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0 0.2rem;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--shell);
+  padding: 0.15rem 0.95rem 0.15rem;
+  transition: background 0.2s ease;
+}
+
+.faq-item[open] {
+  background: var(--soft);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.85rem 1.4rem 0.85rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.faq-item[open] summary::after { content: "−"; }
+
+.faq-item p {
+  margin: 0 0 0.95rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* BEFORE / AFTER */
+.ba-block {
+  padding: 0 0.45rem 1.15rem;
+}
+
+.ba-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0 0.5rem 0.7rem;
+}
+
+.ba-head h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.ba-tabs {
+  display: inline-flex;
+  gap: 0.2rem;
+  padding: 0.2rem;
+  border-radius: 999px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+}
+
+.ba-tab {
+  border: 0;
+  background: transparent;
+  min-height: 2rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ba-tab:hover { color: var(--ink); }
+
+.ba-tab.is-active {
+  background: var(--shell);
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.ba-stage {
+  padding: 0.65rem;
+  border-radius: 18px;
+  background: var(--soft);
+}
+
+.ba-pane[hidden] { display: none; }
+
+.ba-pane .shot {
+  margin: 0;
+}
+
+.ba-mock {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  min-height: 280px;
+  font-family: Tahoma, Verdana, sans-serif;
+}
+
+.ba-mock-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.65rem;
+  background: #e8e8e8;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.ba-mock-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #bbb;
+}
+
+.ba-mock-url {
+  flex: 1;
+  margin-left: 0.35rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  color: #666;
+  font-size: 0.68rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ba-mock-body {
+  padding: 0.85rem 0.9rem 1rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.ba-mock-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.75rem;
+  font-size: 0.7rem;
+  color: #1a4a8a;
+  text-decoration: underline;
+  margin-bottom: 0.2rem;
+}
+
+.ba-mock-hero {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  background: linear-gradient(180deg, #fafafa, #ececec);
+}
+
+.ba-mock-hero strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+  color: #222;
+}
+
+.ba-mock-hero span {
+  display: block;
+  font-size: 0.72rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.ba-mock-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+}
+
+.ba-mock-card {
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  padding: 0.55rem;
+  min-height: 3.2rem;
+}
+
+.ba-mock-card b {
+  display: block;
+  font-size: 0.72rem;
+  margin-bottom: 0.2rem;
+  color: #333;
+}
+
+.ba-mock-card i {
+  display: block;
+  font-style: normal;
+  font-size: 0.65rem;
+  color: #777;
+  line-height: 1.35;
+}
+
+.ba-mock-cta {
+  display: inline-block;
+  margin-top: 0.15rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid #999;
+  background: #ddd;
+  color: #222;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.ba-mock.is-petrol .ba-mock-hero {
+  background: linear-gradient(180deg, #fff8e8, #e8e0d0);
+  border-color: #c9b896;
+}
+
+.ba-mock.is-petrol .ba-mock-cta {
+  background: #c9a227;
+  border-color: #a88410;
+  color: #fff;
+}
+
+.ba-mock.is-globit .ba-mock-hero {
+  background: linear-gradient(180deg, #e8eef8, #d5deec);
+  border-color: #9aadc8;
+}
+
+.ba-mock.is-globit .ba-mock-cta {
+  background: #2f5f9f;
+  border-color: #244a7a;
+  color: #fff;
+}
+
+.ba-mock.is-inmis .ba-mock-hero {
+  background: linear-gradient(180deg, #eef7f4, #d9ebe4);
+  border-color: #9bbfb0;
+}
+
+.ba-mock.is-inmis .ba-mock-cta {
+  background: #2f7a62;
+  border-color: #246350;
+  color: #fff;
+}
+
+.ba-mock.is-profite .ba-mock-hero {
+  background: linear-gradient(180deg, #fff3ea, #f0ddd0);
+  border-color: #d0a890;
+}
+
+.ba-mock.is-profite .ba-mock-cta {
+  background: #e0672a;
+  border-color: #b8511c;
+  color: #fff;
+}
+
+.ba-mock.is-zoomir .ba-mock-hero {
+  background: linear-gradient(180deg, #f3eefc, #e4dcf2);
+  border-color: #b8a8d4;
+}
+
+.ba-mock.is-zoomir .ba-mock-cta {
+  background: #6b4db0;
+  border-color: #553c8f;
+  color: #fff;
+}
+
+.ba-caption {
+  margin: 0.55rem 0 0;
+  padding: 0 0.15rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
 .toast {
   position: fixed;
   left: 50%;
@@ -947,6 +1275,34 @@ body.is-dark .shot {
 
 body.is-dark .shot:hover {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+body.is-dark .review,
+body.is-dark .faq-item {
+  background: var(--shell);
+}
+
+body.is-dark .faq-item[open] {
+  background: var(--soft);
+}
+
+body.is-dark .ba-tab.is-active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+body.is-dark .ba-mock {
+  border-color: #333;
+}
+
+body.is-dark .ba-mock-bar {
+  background: #2a2a2a;
+  border-bottom-color: #333;
+}
+
+body.is-dark .ba-mock-url {
+  background: #1a1a1a;
+  border-color: #333;
+  color: #999;
 }
 
 body.is-dark .social-tg {

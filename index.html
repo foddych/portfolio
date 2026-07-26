@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>foddyzorich — портфолио</title>
   <meta name="description" content="Портфолио: редизайн сайтов, лендинги, магазины и бренды.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="foddyzorich">
+  <meta property="og:title" content="foddyzorich — портфолио">
+  <meta property="og:description" content="Редизайн сайтов, лендинги, магазины и боты Telegram/Max.">
+  <meta property="og:image" content="https://foddych.github.io/portfolio/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://foddych.github.io/portfolio/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="foddyzorich — портфолио">
+  <meta name="twitter:description" content="Редизайн сайтов, лендинги, магазины и боты Telegram/Max.">
+  <meta name="twitter:image" content="https://foddych.github.io/portfolio/assets/og.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -167,6 +179,63 @@
         </div>
       </section>
 
+      <section class="block" id="reviews">
+        <div class="block-head">
+          <p class="meta-dot">Отзывы</p>
+        </div>
+        <div class="reviews">
+          <article class="review">
+            <p>«Сайт стал выглядеть современно, цены и станции наконец в одном месте. Клиенты стали чаще писать с формы.»</p>
+            <footer>
+              <strong>Андрей Смирнов</strong>
+              <span>Petrol-Люкс</span>
+            </footer>
+          </article>
+          <article class="review">
+            <p>«Сделали аккуратно и по делу: структура понятная, услуги читаются, заявки пошли быстрее обычного.»</p>
+            <footer>
+              <strong>Елена Котова</strong>
+              <span>Glob-IT</span>
+            </footer>
+          </article>
+          <article class="review">
+            <p>«Быстро собрали лендинг и довели до запуска. Удобно, что сразу показали тестовый вариант.»</p>
+            <footer>
+              <strong>Максим Орлов</strong>
+              <span>ProfiTE</span>
+            </footer>
+          </article>
+        </div>
+      </section>
+
+      <section class="block" id="faq">
+        <div class="block-head">
+          <p class="meta-dot">FAQ</p>
+        </div>
+        <div class="faq" id="faq-list">
+          <details class="faq-item">
+            <summary>Сколько занимает работа?</summary>
+            <p>Тестовый вариант обычно 1–2 дня, готовый — от 3 до 7 дней. Срок зависит от объёма блоков, текстов и правок.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Сколько правок входит?</summary>
+            <p>В рамках задачи — 1–2 круга правок по согласованному макету. Крупные новые блоки считаем отдельно.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Что нужно от меня для старта?</summary>
+            <p>Коротко: цель сайта, контакты, примеры которые нравятся, тексты/фото если есть, доступ к текущему сайту.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Как оплата?</summary>
+            <p>Обычно предоплата 50% на старт, остаток после согласования и перед передачей/публикацией.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Чем тестовый вариант отличается от готового?</summary>
+            <p>Тестовый — быстрый каркас под задачу. Готовый — финальный визуал, адаптив, правки и подготовка к запуску.</p>
+          </details>
+        </div>
+      </section>
+
       <section class="cta" id="contact">
         <h2>Давайте сделаем проект</h2>
         <p>Напишите коротко задачу — сайт, редизайн, магазин или бота.</p>
@@ -231,6 +300,20 @@
       </div>
 
       <div class="case-copy case-reveal" id="project-intro"></div>
+
+      <section class="ba-block case-reveal" id="project-ba" hidden>
+        <div class="ba-head">
+          <h3>До и после</h3>
+          <div class="ba-tabs" role="tablist" aria-label="До и после">
+            <button class="ba-tab is-active" type="button" data-ba="before" role="tab" aria-selected="true">До</button>
+            <button class="ba-tab" type="button" data-ba="after" role="tab" aria-selected="false">После</button>
+          </div>
+        </div>
+        <div class="ba-stage">
+          <div class="ba-pane is-active" data-ba-pane="before" id="project-ba-before"></div>
+          <div class="ba-pane" data-ba-pane="after" id="project-ba-after" hidden></div>
+        </div>
+      </section>
 
       <div class="shot-frame case-reveal">
         <div class="shot-gallery" id="project-gallery"></div>
