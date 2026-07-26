@@ -273,22 +273,105 @@
     document.body.classList.add("service-open");
   };
 
-  const setExpand = (id, open) => {
-    const btn = document.querySelector(`[data-expand="${id}"]`);
-    const list = document.querySelector(`[data-expand-list="${id}"]`);
-    if (!btn || !list) return;
-    list.classList.toggle("is-collapsed", !open);
-    btn.classList.toggle("is-active", open);
-    btn.setAttribute("aria-expanded", open ? "true" : "false");
-    btn.textContent = open ? "Свернуть" : "Все →";
+  const allReviews = [
+    {
+      text: "Сайт стал выглядеть современно, цены и станции наконец в одном месте. Клиенты стали чаще писать с формы.",
+      name: "Андрей Смирнов",
+      company: "Petrol-Люкс",
+    },
+    {
+      text: "Сделали аккуратно и по делу: структура понятная, услуги читаются, заявки пошли быстрее обычного.",
+      name: "Елена Котова",
+      company: "Glob-IT",
+    },
+    {
+      text: "Быстро собрали лендинг и довели до запуска. Удобно, что сразу показали тестовый вариант.",
+      name: "Максим Орлов",
+      company: "ProfiTE",
+    },
+    {
+      text: "Раньше сайт выглядел устаревшим. После редизайна ассортимент читается, клиенты чаще звонят и спрашивают доставку.",
+      name: "Олег Ефимов",
+      company: "Зоомир",
+    },
+    {
+      text: "Нужен был понятный медтех-лендинг без воды. Сделали структуру, адаптив и форму — стало проще объяснять услуги.",
+      name: "Татьяна Волкова",
+      company: "Inmis",
+    },
+  ];
+
+  const listModal = document.getElementById("list-modal");
+  const listTitle = document.getElementById("list-title");
+  const listTag = document.getElementById("list-tag");
+  const listBody = document.getElementById("list-body");
+  let listKind = null;
+
+  const closeList = () => {
+    if (!listModal || listModal.hidden) return;
+    listModal.hidden = true;
+    document.body.classList.remove("list-open");
+    document.querySelectorAll("[data-all].is-active").forEach((btn) => {
+      btn.classList.remove("is-active");
+    });
+    listKind = null;
+  };
+
+  const openList = (kind) => {
+    if (!listModal || !listBody) return;
+    listKind = kind;
+    document.querySelectorAll("[data-all]").forEach((btn) => {
+      btn.classList.toggle("is-active", btn.getAttribute("data-all") === kind);
+    });
+
+    if (kind === "works") {
+      listTag.textContent = "Портфолио";
+      listTitle.textContent = "Все проекты";
+      listBody.innerHTML = `<div class="rows">${Object.entries(projects)
+        .map(
+          ([key, item]) => `
+          <button class="row" type="button" data-open="${key}">
+            <span class="row-icon"><img src="${item.icon}" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
+            <span class="row-text">
+              <strong>${item.title}</strong>
+              <small>${item.meta[1][1]}</small>
+            </span>
+            <span class="chev" aria-hidden="true">›</span>
+          </button>`
+        )
+        .join("")}</div>`;
+    } else if (kind === "reviews") {
+      listTag.textContent = "Клиенты";
+      listTitle.textContent = "Все отзывы";
+      listBody.innerHTML = `<div class="reviews">${allReviews
+        .map(
+          (item) => `
+          <article class="review">
+            <p>«${item.text}»</p>
+            <footer>
+              <strong>${item.name}</strong>
+              <span>${item.company}</span>
+            </footer>
+          </article>`
+        )
+        .join("")}</div>`;
+    } else {
+      return;
+    }
+
+    listModal.hidden = false;
+    document.body.classList.add("list-open");
   };
 
   document.addEventListener("click", (e) => {
-    const expandBtn = e.target.closest("[data-expand]");
-    if (expandBtn) {
-      const id = expandBtn.getAttribute("data-expand");
-      const open = !expandBtn.classList.contains("is-active");
-      setExpand(id, open);
+    const allBtn = e.target.closest("[data-all]");
+    if (allBtn) {
+      openList(allBtn.getAttribute("data-all"));
+      return;
+    }
+
+    if (e.target.closest("[data-close-list]")) {
+      closeList();
       return;
     }
 
@@ -304,7 +387,10 @@
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeService();
+    if (e.key === "Escape") {
+      closeList();
+      closeService();
+    }
   });
 
   const toast = document.getElementById("toast");
