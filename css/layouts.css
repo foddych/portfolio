@@ -6,6 +6,23 @@
   display: none !important;
 }
 
+.layout {
+  transition:
+    opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.layout.is-leaving {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+
+.layout.is-entering {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
 body.is-picking {
   overflow: hidden;
 }
