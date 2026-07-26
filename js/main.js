@@ -22,7 +22,6 @@
       beforeAfter: {
         before: "assets/works/petrol/before-desktop.png",
         after: "assets/works/petrol/00-full-desktop.png",
-        source: "http://azs37.ru/",
         issues: [
           "Устаревший шаблон: 3D-баннер и таблица цен не вызывают доверия",
           "Цены в сухой таблице — нет акцента и удобного сравнения",
@@ -53,7 +52,6 @@
       beforeAfter: {
         before: "assets/works/globit/before-desktop.png",
         after: "assets/works/globit/00-full-desktop.png",
-        source: "https://glob-it.ru/",
         issues: [
           "Тёмный стоковый hero не объясняет ценность и не цепляет",
           "Шапка перегружена контактами — сложно сфокусироваться",
@@ -84,7 +82,6 @@
       beforeAfter: {
         before: "assets/works/inmis/before-desktop.png",
         after: "assets/works/inmis/00-full-desktop.png",
-        source: "https://inmis.ru/",
         issues: [
           "Hero без CTA — непонятно, что делать дальше",
           "Иллюстрация и заголовок есть, а ценность решений не раскрыта",
@@ -115,7 +112,6 @@
       beforeAfter: {
         before: "assets/works/profite/before-desktop.png",
         after: "assets/works/profite/00-full-desktop.png",
-        source: "https://profite.ru/",
         issues: [
           "Форма входа и оранжевое меню съедают внимание вместо оффера",
           "Баннеры и битые картинки снижают доверие",
@@ -146,7 +142,6 @@
       beforeAfter: {
         before: "assets/works/zoomir/before-desktop.png",
         after: "assets/works/zoomir/00-full-desktop.png",
-        source: "http://zoomir37.ru/",
         issues: [
           "Битые баннеры и «кричащие» бейджи вместо витрины",
           "Первый экран про отсутствие товаров — отталкивает",
@@ -383,16 +378,11 @@
     // Hide gallery below — after shot already lives in the «После» tab
     if (shotFrame) shotFrame.hidden = true;
 
-    const source = ba.source
-      ? `<p class="ba-source">Исходный сайт: <a href="${ba.source}" target="_blank" rel="noopener">${ba.source.replace(/^https?:\/\//, "")}</a></p>`
-      : "";
-
     baBefore.innerHTML = `
       ${shotHtml(ba.before, `${data.title} — до`)}
       <div class="ba-notes">
         <p class="ba-notes-title">Что не так</p>
         <ul>${issues}</ul>
-        ${source}
       </div>`;
     baAfter.innerHTML = shotHtml(ba.after, `${data.title} — после`);
     setBaView("before");
