@@ -9,7 +9,12 @@
     (function () {
       try {
         var layout = localStorage.getItem("foddy-layout");
-        if (layout === "editorial" || layout === "studio" || layout === "clean") {
+        // drop removed layouts so the gate shows again
+        if (layout === "editorial" || layout === "studio") {
+          localStorage.removeItem("foddy-layout");
+          layout = null;
+        }
+        if (layout === "split" || layout === "poster" || layout === "clean") {
           document.documentElement.setAttribute("data-layout", layout);
           document.documentElement.dataset.layoutPicked = "1";
         } else {
@@ -22,7 +27,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/layouts.css">
 </head>
@@ -31,7 +36,7 @@
     <div class="layout-gate-panel">
       <p class="layout-gate-brand">foddyzorich</p>
       <h1 class="layout-gate-title">Выбери дизайн портфолио</h1>
-      <p class="layout-gate-sub">Три разных интерфейса — не темы, а разные layout’ы. Потом можно сменить.</p>
+      <p class="layout-gate-sub">Три разных layout’а. Потом можно сменить в шапке.</p>
       <div class="layout-cards">
         <button class="layout-card" type="button" data-layout-pick="clean">
           <span class="layout-preview is-clean" aria-hidden="true">
@@ -42,24 +47,24 @@
             </span>
           </span>
           <strong>Clean</strong>
-          <small>App-shell, как сейчас</small>
+          <small>Компактный app-shell</small>
         </button>
-        <button class="layout-card" type="button" data-layout-pick="editorial">
-          <span class="layout-preview is-editorial" aria-hidden="true">
-            <span class="lp-topline"></span>
-            <span class="lp-giant"></span>
-            <span class="lp-rules"><i></i><i></i><i></i></span>
+        <button class="layout-card" type="button" data-layout-pick="split">
+          <span class="layout-preview is-split" aria-hidden="true">
+            <span class="lp-split">
+              <span class="lp-split-side"></span>
+              <span class="lp-split-main"><i></i><i></i><i></i></span>
+            </span>
           </span>
-          <strong>Editorial</strong>
-          <small>Журнальная вёрстка</small>
+          <strong>Split</strong>
+          <small>Сайдбар + лента работ</small>
         </button>
-        <button class="layout-card" type="button" data-layout-pick="studio">
-          <span class="layout-preview is-studio" aria-hidden="true">
-            <span class="lp-stack"><i></i><i></i></span>
-            <span class="lp-bento"><i></i><i></i><i></i><i></i></span>
+        <button class="layout-card" type="button" data-layout-pick="poster">
+          <span class="layout-preview is-poster" aria-hidden="true">
+            <span class="lp-posters"><i></i><i></i><i></i></span>
           </span>
-          <strong>Studio</strong>
-          <small>Тёмный grid с превью</small>
+          <strong>Poster</strong>
+          <small>Полноширинные постеры</small>
         </button>
       </div>
     </div>
@@ -235,119 +240,80 @@
     </div>
   </div>
 
-  <!-- ========== EDITORIAL ========== -->
-  <div class="layout layout-editorial" data-layout-root="editorial" hidden>
-    <header class="ed-top">
-      <a class="ed-brand" href="#ed-top" data-panel="home">foddyzorich</a>
-      <nav class="ed-nav" aria-label="Навигация">
-        <a href="#ed-works">Работы</a>
-        <a href="#ed-services">Услуги</a>
-        <a href="#ed-contact">Контакт</a>
-      </nav>
-      <button class="ed-switch" type="button" data-open-layout-gate>Сменить дизайн</button>
-    </header>
-
-    <main class="ed-page layout-home" id="ed-top">
-      <section class="ed-hero">
-        <p class="ed-kicker">Веб-разработчик · открыт к проектам</p>
-        <h1 class="ed-name">Кирилл</h1>
-        <div class="ed-hero-grid">
-          <p class="ed-lead">Делаю сайты и ботов под задачу бизнеса: лендинги, редизайн, магазины и бренды.</p>
-          <div class="ed-hero-side">
-            <img class="ed-portrait" src="assets/avatar.png" alt="">
-            <a class="ed-link" href="https://t.me/foddy1337" target="_blank" rel="noopener">Telegram ↗</a>
-            <a class="ed-link" href="https://vk.com/foddy1337" target="_blank" rel="noopener">VK ↗</a>
-          </div>
+  <!-- ========== SPLIT ========== -->
+  <div class="layout layout-split" data-layout-root="split" hidden>
+    <aside class="sp-rail">
+      <div class="sp-rail-top">
+        <button class="sp-switch" type="button" data-open-layout-gate>Сменить дизайн</button>
+        <span class="sp-status"><i></i> Открыт к проектам</span>
+      </div>
+      <div class="sp-rail-main">
+        <img class="sp-avatar" src="assets/avatar.png" alt="">
+        <p class="sp-role">Веб-разработчик</p>
+        <h1>Кирилл</h1>
+        <p class="sp-bio">Сайты, редизайн, магазины и боты — под задачу бизнеса.</p>
+        <div class="sp-actions">
+          <a class="sp-btn" href="https://t.me/foddy1337" target="_blank" rel="noopener">Telegram</a>
+          <a class="sp-btn sp-btn-ghost" href="https://vk.com/foddy1337" target="_blank" rel="noopener">VK</a>
+          <button class="sp-btn sp-btn-ghost" type="button" data-email="kirya.domantsev@bk.ru">Email</button>
         </div>
-      </section>
+      </div>
+      <p class="sp-foot">© <span class="js-year"></span> · <a href="https://foddy.studio" target="_blank" rel="noopener">foddy.studio</a></p>
+    </aside>
 
-      <section class="ed-section" id="ed-works">
-        <div class="ed-section-head">
-          <h2>Избранные работы</h2>
+    <main class="sp-main layout-home" id="sp-top">
+      <section class="sp-block" id="sp-works">
+        <div class="sp-block-head">
+          <h2>Проекты</h2>
           <span>05</span>
         </div>
-        <div class="ed-index" data-editorial-projects></div>
+        <div class="sp-list" data-split-projects></div>
       </section>
 
-      <section class="ed-section" id="ed-services">
-        <div class="ed-section-head">
+      <section class="sp-block" id="sp-services">
+        <div class="sp-block-head">
           <h2>Услуги</h2>
         </div>
-        <div class="ed-services">
-          <button type="button" data-service="redesign"><span>01</span><strong>Редизайн сайтов</strong><em>Структура и визуал</em></button>
-          <button type="button" data-service="landing"><span>02</span><strong>Лендинги</strong><em>Оффер и заявка</em></button>
-          <button type="button" data-service="shop"><span>03</span><strong>Магазины и бренды</strong><em>Витрина и путь покупки</em></button>
-          <button type="button" data-service="bots"><span>04</span><strong>Боты</strong><em>Telegram и Max</em></button>
+        <div class="sp-services">
+          <button type="button" data-service="redesign"><strong>Редизайн</strong><span>Сайты</span></button>
+          <button type="button" data-service="landing"><strong>Лендинги</strong><span>Оффер</span></button>
+          <button type="button" data-service="shop"><strong>Магазины</strong><span>Бренд</span></button>
+          <button type="button" data-service="bots"><strong>Боты</strong><span>TG / Max</span></button>
         </div>
-      </section>
-
-      <section class="ed-contact" id="ed-contact">
-        <h2>Давайте сделаем проект</h2>
-        <p>Коротко опишите задачу — отвечу в Telegram или на почту.</p>
-        <div class="ed-contact-actions">
-          <a href="https://t.me/foddy1337" target="_blank" rel="noopener">Написать в Telegram →</a>
-          <button type="button" data-email="kirya.domantsev@bk.ru">Скопировать email</button>
-        </div>
-        <p class="ed-colophon">© <span class="js-year"></span> · Сделано <a href="https://foddy.studio" target="_blank" rel="noopener">foddy.studio</a></p>
       </section>
     </main>
   </div>
 
-  <!-- ========== STUDIO ========== -->
-  <div class="layout layout-studio" data-layout-root="studio" hidden>
-    <header class="st-top">
-      <div class="st-brand">
-        <span>foddy</span>
-        <span class="st-live"><i></i> open</span>
+  <!-- ========== POSTER ========== -->
+  <div class="layout layout-poster" data-layout-root="poster" hidden>
+    <header class="po-top">
+      <a class="po-brand" href="#po-top" data-panel="home">foddyzorich</a>
+      <div class="po-top-actions">
+        <a href="https://t.me/foddy1337" target="_blank" rel="noopener">Telegram</a>
+        <button type="button" data-open-layout-gate>Сменить дизайн</button>
       </div>
-      <nav class="st-nav" aria-label="Навигация">
-        <a href="#st-works">Work</a>
-        <a href="#st-services">Services</a>
-        <a href="#st-contact">Contact</a>
-      </nav>
-      <button class="st-switch" type="button" data-open-layout-gate>Layouts</button>
     </header>
 
-    <main class="st-page layout-home" id="st-top">
-      <section class="st-hero">
-        <p class="st-eyebrow">Kirill · web & bots</p>
-        <h1>
-          <span>Сайты</span>
-          <span>Боты</span>
-          <span class="st-accent">Бренды</span>
-        </h1>
-        <p class="st-lead">Редизайн, лендинги и Telegram/Max — под задачу бизнеса, без лишнего шума.</p>
-        <div class="st-hero-actions">
-          <a class="st-btn" href="https://t.me/foddy1337" target="_blank" rel="noopener">Telegram</a>
-          <a class="st-btn st-btn-ghost" href="#st-works">Смотреть работы</a>
-        </div>
+    <main class="po-page layout-home" id="po-top">
+      <section class="po-intro">
+        <p class="po-kicker">Веб-разработчик</p>
+        <h1>Кирилл — сайты, редизайн и боты под задачу</h1>
       </section>
 
-      <section class="st-section" id="st-works">
-        <div class="st-section-head">
-          <h2>Selected work</h2>
-          <span>/ 05</span>
-        </div>
-        <div class="st-bento" data-studio-projects></div>
-      </section>
+      <section class="po-works" id="po-works" data-poster-projects></section>
 
-      <section class="st-section" id="st-services">
-        <div class="st-section-head">
-          <h2>Services</h2>
+      <section class="po-bottom" id="po-services">
+        <div class="po-services">
+          <button type="button" data-service="redesign">Редизайн</button>
+          <button type="button" data-service="landing">Лендинги</button>
+          <button type="button" data-service="shop">Магазины</button>
+          <button type="button" data-service="bots">Боты</button>
         </div>
-        <div class="st-services">
-          <button type="button" data-service="redesign">Редизайн <span>↗</span></button>
-          <button type="button" data-service="landing">Лендинги <span>↗</span></button>
-          <button type="button" data-service="shop">Магазины <span>↗</span></button>
-          <button type="button" data-service="bots">Боты <span>↗</span></button>
+        <div class="po-contact" id="po-contact">
+          <h2>Есть задача?</h2>
+          <a href="https://t.me/foddy1337" target="_blank" rel="noopener">Написать в Telegram →</a>
+          <p>© <span class="js-year"></span> · сделано <a href="https://foddy.studio" target="_blank" rel="noopener">foddy.studio</a></p>
         </div>
-      </section>
-
-      <section class="st-contact" id="st-contact">
-        <h2>Next project?</h2>
-        <p>Кидайте задачу в Telegram — обсудим срок и формат.</p>
-        <a class="st-btn st-btn-lg" href="https://t.me/foddy1337" target="_blank" rel="noopener">@foddy1337</a>
-        <p class="st-foot">© <span class="js-year"></span> · made by <a href="https://foddy.studio" target="_blank" rel="noopener">foddy.studio</a></p>
       </section>
     </main>
   </div>

@@ -108,7 +108,7 @@
   });
 
   const LAYOUT_KEY = "foddy-layout";
-  const LAYOUTS = new Set(["clean", "editorial", "studio"]);
+  const LAYOUTS = new Set(["clean", "split", "poster"]);
   const root = document.documentElement;
   const layoutGate = document.getElementById("layout-gate");
   let currentLayout = LAYOUTS.has(root.getAttribute("data-layout"))
@@ -134,29 +134,29 @@
         .join("");
     });
 
-    document.querySelectorAll("[data-editorial-projects]").forEach((mount) => {
+    document.querySelectorAll("[data-split-projects]").forEach((mount) => {
       mount.innerHTML = entries
         .map(
           ([id, item], index) => `
-        <button class="ed-item" type="button" data-open="${id}">
+        <button class="sp-item" type="button" data-open="${id}">
           <span class="num">${String(index + 1).padStart(2, "0")}</span>
           <span>
             <strong>${item.title}</strong>
             <small>${item.blurb}</small>
           </span>
-          <span class="go" aria-hidden="true">→</span>
+          <img src="${item.cover}" alt="" loading="lazy">
         </button>`
         )
         .join("");
     });
 
-    document.querySelectorAll("[data-studio-projects]").forEach((mount) => {
+    document.querySelectorAll("[data-poster-projects]").forEach((mount) => {
       mount.innerHTML = entries
         .map(
           ([id, item]) => `
-        <button class="st-tile" type="button" data-open="${id}">
+        <button class="po-poster" type="button" data-open="${id}">
           <img src="${item.cover}" alt="" loading="lazy">
-          <span class="st-tile-copy">
+          <span class="po-poster-copy">
             <strong>${item.title}</strong>
             <small>${item.blurb}</small>
           </span>
