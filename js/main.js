@@ -150,10 +150,6 @@
     else openStyleGate();
   });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && root.dataset.skinPicked === "1") closeStyleGate();
-  });
-
   if (root.dataset.skinPicked !== "1") openStyleGate();
   else applySkin(root.getAttribute("data-skin") || "clean");
 
