@@ -898,6 +898,20 @@ body.is-dark .made-by:hover {
   color: var(--ink);
 }
 
+.ba-source {
+  margin: 0.75rem 0 0;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.ba-source a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .toast {
   position: fixed;
   left: 50%;
