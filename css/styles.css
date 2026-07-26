@@ -965,7 +965,7 @@ body.is-dark .avatar {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .btn:hover, .row:hover, .made-by:hover { transform: none; }
-  .made-by-name { transition: none; }
+  .btn:hover, .row:hover { transform: none; }
+  .made-by em { transition: none; }
   .service-sheet { animation: none; }
 }
