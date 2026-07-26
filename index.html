@@ -90,9 +90,9 @@
       <section class="block" id="works">
         <div class="block-head">
           <p class="meta-dot">Проекты</p>
-          <span class="chip">Все →</span>
+          <button class="chip chip-btn" type="button" data-expand="works" aria-expanded="false">Все →</button>
         </div>
-        <div class="rows">
+        <div class="rows is-collapsed" data-expand-list="works">
           <button class="row" type="button" data-open="petrol">
             <span class="row-icon"><img src="assets/icons/petrol.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
@@ -117,7 +117,7 @@
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
-          <button class="row" type="button" data-open="profite">
+          <button class="row expand-item" type="button" data-open="profite">
             <span class="row-icon"><img src="assets/icons/profite.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
               <strong>ProfiTE</strong>
@@ -125,7 +125,7 @@
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
-          <button class="row" type="button" data-open="zoomir">
+          <button class="row expand-item" type="button" data-open="zoomir">
             <span class="row-icon"><img src="assets/icons/zoomir.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
               <strong>Зоомир</strong>
@@ -177,14 +177,24 @@
             <span class="tag">Боты</span>
             <span class="ext" aria-hidden="true">↗</span>
           </button>
+          <button class="row" type="button" data-service="update1c">
+            <span class="row-icon soft"><span class="ico ico-boxes" aria-hidden="true"></span></span>
+            <span class="row-text">
+              <strong>Обновление 1С и ККТ</strong>
+              <small>Обновления, настройка, онлайн-кассы</small>
+            </span>
+            <span class="tag">1С</span>
+            <span class="ext" aria-hidden="true">↗</span>
+          </button>
         </div>
       </section>
 
       <section class="block" id="reviews">
         <div class="block-head">
           <p class="meta-dot">Отзывы</p>
+          <button class="chip chip-btn" type="button" data-expand="reviews" aria-expanded="false">Все →</button>
         </div>
-        <div class="reviews">
+        <div class="reviews is-collapsed" data-expand-list="reviews">
           <article class="review">
             <p>«Сайт стал выглядеть современно, цены и станции наконец в одном месте. Клиенты стали чаще писать с формы.»</p>
             <footer>
@@ -199,11 +209,25 @@
               <span>Glob-IT</span>
             </footer>
           </article>
-          <article class="review">
+          <article class="review expand-item">
             <p>«Быстро собрали лендинг и довели до запуска. Удобно, что сразу показали тестовый вариант.»</p>
             <footer>
               <strong>Максим Орлов</strong>
               <span>ProfiTE</span>
+            </footer>
+          </article>
+          <article class="review expand-item">
+            <p>«Раньше сайт выглядел устаревшим. После редизайна ассортимент читается, клиенты чаще звонят и спрашивают доставку.»</p>
+            <footer>
+              <strong>Олег Ефимов</strong>
+              <span>Зоомир</span>
+            </footer>
+          </article>
+          <article class="review expand-item">
+            <p>«Нужен был понятный медтех-лендинг без воды. Сделали структуру, адаптив и форму — стало проще объяснять услуги.»</p>
+            <footer>
+              <strong>Татьяна Волкова</strong>
+              <span>Inmis</span>
             </footer>
           </article>
         </div>

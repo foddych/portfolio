@@ -112,6 +112,7 @@ button { font: inherit; color: inherit; }
 .ico-landing { --ico: url("../assets/icons/ui/landing.svg"); }
 .ico-dog { --ico: url("../assets/icons/ui/dog.svg"); }
 .ico-bots { --ico: url("../assets/icons/ui/bots.svg"); }
+.ico-boxes { --ico: url("../assets/icons/ui/boxes.svg"); }
 .ico-at { --ico: url("../assets/icons/ui/at.svg"); }
 
 .brand-ico {
@@ -339,6 +340,31 @@ button { font: inherit; color: inherit; }
   color: var(--muted);
   font-size: 0.8rem;
   font-weight: 600;
+}
+
+.chip-btn {
+  border: 0;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.18s ease;
+}
+
+.chip-btn:hover {
+  color: var(--ink);
+  background: #ebebeb;
+}
+
+.chip-btn.is-active {
+  background: var(--ink);
+  color: #fff;
+}
+
+.chip-btn.is-active:hover {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.is-collapsed > .expand-item {
+  display: none;
 }
 
 .rows {
@@ -1109,6 +1135,21 @@ body.is-dark .tag {
 
 body.is-dark .chip {
   color: #bdbdbd;
+}
+
+body.is-dark .chip-btn:hover {
+  background: #2f2f2f;
+  color: #fff;
+}
+
+body.is-dark .chip-btn.is-active {
+  background: #f2f2f2;
+  color: #111;
+}
+
+body.is-dark .chip-btn.is-active:hover {
+  background: #fff;
+  color: #111;
 }
 
 body.is-dark .chev,

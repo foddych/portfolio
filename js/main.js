@@ -216,6 +216,21 @@
         "Простая админка или связка с чатом",
       ],
     },
+    update1c: {
+      title: "Обновление 1С и ККТ",
+      tag: "1С",
+      icon: "ico-boxes",
+      lead: "Помогаю с обновлением 1С, настройкой и подключением ККТ / онлайн-касс — без лишней путаницы.",
+      test: "1–2 дня",
+      full: "2–5 дней",
+      price: "Индивидуально",
+      items: [
+        "Обновление конфигураций 1С",
+        "Проверка и настройка обменов",
+        "Подключение и настройка ККТ / онлайн-касс",
+        "Краткий инструктаж по работе после обновления",
+      ],
+    },
   };
 
   const serviceModal = document.getElementById("service-modal");
@@ -258,7 +273,25 @@
     document.body.classList.add("service-open");
   };
 
+  const setExpand = (id, open) => {
+    const btn = document.querySelector(`[data-expand="${id}"]`);
+    const list = document.querySelector(`[data-expand-list="${id}"]`);
+    if (!btn || !list) return;
+    list.classList.toggle("is-collapsed", !open);
+    btn.classList.toggle("is-active", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.textContent = open ? "Свернуть" : "Все →";
+  };
+
   document.addEventListener("click", (e) => {
+    const expandBtn = e.target.closest("[data-expand]");
+    if (expandBtn) {
+      const id = expandBtn.getAttribute("data-expand");
+      const open = !expandBtn.classList.contains("is-active");
+      setExpand(id, open);
+      return;
+    }
+
     const svc = e.target.closest("[data-service]");
     if (svc) {
       e.preventDefault();
