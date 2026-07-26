@@ -22,6 +22,12 @@
       beforeAfter: {
         before: "assets/works/petrol/before-desktop.png",
         after: "assets/works/petrol/00-full-desktop.png",
+        issues: [
+          "Первый экран не цепляет: нет оффера и доверия к сети",
+          "Цены и станции разнесены — сложно быстро найти нужное",
+          "На телефоне всё мелко и неудобно листать",
+          "Нет явного пути к заявке или звонку",
+        ],
       },
     },
     globit: {
@@ -46,6 +52,12 @@
       beforeAfter: {
         before: "assets/works/globit/before-desktop.png",
         after: "assets/works/globit/00-full-desktop.png",
+        issues: [
+          "Услуги и продукт Церера теряются в длинном тексте",
+          "Нет сильного hero — бренд не выделяется",
+          "Тарифы непрозрачны, сравнивать сложно",
+          "Визуал устаревший, выглядит как типовой шаблон",
+        ],
       },
     },
     inmis: {
@@ -70,6 +82,12 @@
       beforeAfter: {
         before: "assets/works/inmis/before-desktop.png",
         after: "assets/works/inmis/00-full-desktop.png",
+        issues: [
+          "Сложный продукт тонет в плотных абзацах",
+          "Непонятно, чем отличаются направления и решения",
+          "ЕГИСЗ / Улло сложно найти без лишнего чтения",
+          "Путь к заявке слабый — контакт спрятан внизу",
+        ],
       },
     },
     profite: {
@@ -94,6 +112,12 @@
       beforeAfter: {
         before: "assets/works/profite/before-desktop.png",
         after: "assets/works/profite/00-full-desktop.png",
+        issues: [
+          "Оффер и услуги размазаны по странице",
+          "Нет понятного расчёта обновлений 1С",
+          "Первый экран не продаёт франчайзи и доверие",
+          "Контакты и карта живут отдельно от действия",
+        ],
       },
     },
     zoomir: {
@@ -118,6 +142,12 @@
       beforeAfter: {
         before: "assets/works/zoomir/before-desktop.png",
         after: "assets/works/zoomir/00-full-desktop.png",
+        issues: [
+          "Каталог и товары теряются в шуме ссылок",
+          "Первый экран не объясняет ценность магазина",
+          "На мобильном сложно ориентироваться",
+          "Нет спокойного брендового тона — всё «кричит»",
+        ],
       },
     },
   };
@@ -302,6 +332,7 @@
   const baBlock = document.getElementById("project-ba");
   const baBefore = document.getElementById("project-ba-before");
   const baAfter = document.getElementById("project-ba-after");
+  const shotFrame = document.querySelector("#panel-project .shot-frame");
   let busy = false;
   let currentId = null;
 
@@ -335,11 +366,24 @@
       baBlock.hidden = true;
       baBefore.innerHTML = "";
       baAfter.innerHTML = "";
+      if (shotFrame) shotFrame.hidden = false;
       return;
     }
 
+    const issues = (ba.issues || [])
+      .map((item) => `<li>${item}</li>`)
+      .join("");
+
     baBlock.hidden = false;
-    baBefore.innerHTML = shotHtml(ba.before, `${data.title} — до`);
+    // Hide gallery below — after shot already lives in the «После» tab
+    if (shotFrame) shotFrame.hidden = true;
+
+    baBefore.innerHTML = `
+      ${shotHtml(ba.before, `${data.title} — до`)}
+      <div class="ba-notes">
+        <p class="ba-notes-title">Что не так</p>
+        <ul>${issues}</ul>
+      </div>`;
     baAfter.innerHTML = shotHtml(ba.after, `${data.title} — после`);
     setBaView("before");
   };

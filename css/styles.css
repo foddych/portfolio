@@ -869,6 +869,35 @@ body.is-dark .made-by:hover {
   margin: 0;
 }
 
+.ba-notes {
+  margin-top: 0.85rem;
+  padding: 0.85rem 0.95rem;
+  border-radius: 14px;
+  background: var(--shell);
+  border: 1px solid var(--line);
+}
+
+.ba-notes-title {
+  margin: 0 0 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.ba-notes ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.ba-notes li::marker {
+  color: var(--ink);
+}
+
 .toast {
   position: fixed;
   left: 50%;
