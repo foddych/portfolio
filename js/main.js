@@ -107,11 +107,11 @@
         ["Год", "2025"],
       ],
       shots: [
-        "assets/works/profite/after-live.webp",
+        "assets/works/profite/after-live-v2.webp",
       ],
       beforeAfter: {
         before: "assets/works/profite/before-desktop.webp",
-        after: "assets/works/profite/after-live.webp",
+        after: "assets/works/profite/after-live-v2.webp",
         issues: [
           "Форма входа и оранжевое меню съедают внимание вместо оффера",
           "Баннеры и битые картинки снижают доверие",
