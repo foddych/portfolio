@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=20260807b">
 </head>
 <body>
   <header class="nav-bar">
@@ -101,7 +101,7 @@
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
-          <button class="row" type="button" data-open="profitebot">
+          <button class="row" type="button" data-open="bots">
             <span class="row-icon"><img src="assets/icons/bots.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
               <strong>ProfiTE · бот</strong>
@@ -322,6 +322,7 @@
       <div class="project-head case-reveal">
         <span class="project-logo" id="project-logo"></span>
         <div>
+          <p class="meta-dot" id="project-kind">Проект</p>
           <h1 id="project-title">Проект</h1>
           <p id="project-desc"></p>
         </div>
@@ -331,10 +332,10 @@
 
       <section class="ba-block case-reveal" id="project-ba" hidden>
         <div class="ba-head">
-          <h3>До и после</h3>
+          <h3 id="project-ba-title">До и после</h3>
           <div class="ba-tabs" role="tablist" aria-label="До и после">
             <button class="ba-tab is-active" type="button" data-ba="before" role="tab" aria-selected="true">До</button>
-            <button class="ba-tab" type="button" data-ba="after" role="tab" aria-selected="false">После</button>
+            <button class="ba-tab" type="button" data-ba="after" role="tab" aria-selected="false">Концепт</button>
           </div>
         </div>
         <div class="ba-stage">
@@ -348,12 +349,12 @@
       </div>
 
       <section class="case-section case-reveal">
-        <h3>Проблемы, которые необходимо решить</h3>
+        <h3 id="project-problems-title">Проблемы, которые необходимо решить</h3>
         <p id="project-problems"></p>
       </section>
 
       <section class="case-section case-reveal">
-        <h3>Решение</h3>
+        <h3 id="project-solution-title">Решение</h3>
         <p id="project-solution"></p>
       </section>
 
@@ -446,6 +447,6 @@
     </div>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=20260807b"></script>
 </body>
 </html>

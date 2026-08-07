@@ -31,7 +31,7 @@
         ],
       },
     },
-    profitebot: {
+    bots: {
       group: "works",
       title: "ProfiTE · бот",
       icon: "assets/icons/bots.webp",
@@ -60,17 +60,17 @@
       group: "portfolio",
       title: "Petrol-Люкс",
       icon: "assets/icons/petrol.webp",
-      desc: "Набросок one-pager сети АЗС: цены, станции и асфальтово-янтарная подача.",
+      desc: "Набросок: one-pager сети АЗС — цены, станции, асфальт и янтарь.",
       intro:
-        "Концепт редизайна сайта сети АЗС: показать, как мог бы выглядеть спокойный современный one-pager с ценами, станциями и понятным путём к контакту. Это набросок из портфолио, не запущенный проект.",
+        "Это не запущенный сайт, а набросок из портфолио. Показываю, как мог бы выглядеть спокойный современный one-pager АЗС: цены, станции и короткий путь к контакту — без типового шаблона.",
       problems:
-        "Типовые сайты АЗС плохо держат внимание: цены и станции разрознены, на мобильном сложно ориентироваться, первый экран не объясняет ценность сети. В наброске собрал один маршрут — от цены и адреса до заявки.",
+        "У живого сайта сеть теряется в старой подаче: цены в таблице, слабый первый экран, неудобно с телефона. В наброске собираю один маршрут — от цены и адреса до заявки.",
       solution:
-        "Набросал светлый лендинг с живыми ценами, раскрывающимися станциями на карте и адаптивной шапкой. Палитра асфальт/янтарь подчёркивает продукт, структура ведёт от оффера к адресам и контактам.",
+        "Эскиз светлого лендинга: живые цены, станции на карте, адаптивная шапка. Палитра асфальт/янтарь и простая структура — от оффера к адресам и контактам.",
       meta: [
         ["Бренд", "Petrol-Люкс"],
         ["Тип", "Набросок · АЗС"],
-        ["Формат", "One-pager, редизайн"],
+        ["Формат", "Концепт one-pager"],
         ["Год", "2025"],
       ],
       shots: [
@@ -91,17 +91,17 @@
       group: "portfolio",
       title: "Glob-IT",
       icon: "assets/icons/globit.webp",
-      desc: "Набросок корпоративного редизайна: lavender bento, услуги, тарифы и Церера.",
+      desc: "Набросок: lavender bento — услуги, тарифы и продукт Церера.",
       intro:
-        "Концепт сайта IT-компании: повысить узнаваемость и сделать услуги, тарифы и продукт Церера читаемыми с первого экрана. Набросок из портфолио — визуал и структура как предложение, не продакшен.",
+        "Это концепт из портфолио, не продакшен. Набросок корпоративного сайта IT-компании: услуги, тарифы и Церера читаются с первого экрана, без тяжёлого шаблона 2010-х.",
       problems:
-        "Старая подача не держала фокус на услугах 1С, тарифах и собственном продукте. Нужен был фирменный стиль под системность и надёжность — без типового корпоративного шаблона.",
+        "Старая подача не держит фокус: услуги 1С, тарифы и свой продукт размазаны. В эскизе нужен фирменный тон — системность и надёжность — и явная иерархия блоков.",
       solution:
-        "Набросал лавандовый bento: сильный hero, преимущества, услуги по направлениям, тарифы, акцент на Церере, клиенты и быстрый контакт. Визуал и блоки работают вместе на доверие и заявку.",
+        "Эскиз лавандового bento: сильный hero, преимущества, услуги по направлениям, тарифы, акцент на Церере и быстрый контакт. Визуал и сетка работают на доверие и заявку.",
       meta: [
         ["Бренд", "Glob-IT · Крона"],
-        ["Тип", "Набросок · корпоративный"],
-        ["Формат", "Lavender bento, UI"],
+        ["Тип", "Набросок · IT"],
+        ["Формат", "Концепт UI"],
         ["Год", "2025"],
       ],
       shots: [
@@ -122,17 +122,17 @@
       group: "portfolio",
       title: "Inmis",
       icon: "assets/icons/inmis.webp",
-      desc: "Набросок медтех-лендинга: продукты, услуги и путь для B2B.",
+      desc: "Набросок: медтех-лендинг — продукты, услуги, путь к заявке.",
       intro:
-        "Концепт лендинга медтех-продуктов: быстро объяснить ценность решений и довести до заявки без перегруза. Это набросок из портфолио, не запущенный сайт.",
+        "Набросок из портфолио: как мог бы выглядеть спокойный медтех-лендинг для B2B — ценность решений сразу, без длинной «воды» и без запуска в прод.",
       problems:
-        "Сложный продукт тонет в длинных текстах: непонятно, чем отличаются направления, куда смотреть про ЕГИСЗ/Улло и как связаться. Нужна ясная иерархия и спокойный тон.",
+        "Сложный продукт тонет в текстах: направления, ЕГИСЗ/Улло и контакт не читаются. В концепте нужна ясная иерархия и профессиональный тон.",
       solution:
-        "Набросал структуру с сильным hero, блоками услуг и продуктов, акцентами на ключевые решения и удобной формой. Навигация и адаптив держат фокус на сути продукта.",
+        "Эскиз структуры: сильный hero, блоки услуг и продуктов, акценты на ключевые решения и удобная форма. Навигация держит фокус на сути продукта.",
       meta: [
         ["Бренд", "Inmis"],
         ["Тип", "Набросок · медтех"],
-        ["Формат", "Лендинг, UI"],
+        ["Формат", "Концепт лендинга"],
         ["Год", "2025"],
       ],
       shots: [
@@ -153,17 +153,17 @@
       group: "portfolio",
       title: "Зоомир",
       icon: "assets/icons/zoomir.webp",
-      desc: "Набросок редизайна зоомагазина: ассортимент, витрина и фирменный тон.",
+      desc: "Набросок: редизайн зоомагазина — витрина, ассортимент, тон бренда.",
       intro:
-        "Концепт сайта зоомагазина Зоомир: современная витрина, ассортимент и спокойный путь к контакту. Набросок из портфолио — предложение по виду и структуре, не запуск.",
+        "Это эскиз из портфолио, не запуск. Показываю, как мог бы выглядеть сайт Зоомира: современная витрина, ассортимент и спокойный путь к контакту.",
       problems:
-        "Текущий сайт выглядит шаблонно: стоковый hero, слабые акценты на ассортимент и доверие. Не хватает маршрута от оффера к категориям, 3D-туру и заявке.",
+        "Живой сайт шаблонный: стоковый hero, слабые акценты на ассортимент. В наброске собираю маршрут от оффера к категориям, туру и заявке.",
       solution:
-        "Набросал светлый one-pager с лавандово-синей палитрой, сильным hero, блоком ассортимента, туром по магазину и быстрым контактом. Визуал ведёт от атмосферы бренда к действию.",
+        "Эскиз светлого one-pager: лавандово-синяя палитра, сильный hero, ассортимент, тур по магазину и быстрый контакт. От атмосферы бренда к действию.",
       meta: [
         ["Бренд", "Зоомир"],
         ["Тип", "Набросок · зоомагазин"],
-        ["Формат", "UI, one-pager"],
+        ["Формат", "Концепт UI"],
         ["Год", "2025"],
       ],
       shots: [
@@ -181,6 +181,9 @@
       },
     },
   };
+
+  const projectAliases = { profitebot: "bots" };
+  const resolveProjectId = (id) => projectAliases[id] || id;
 
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
@@ -491,9 +494,13 @@
   const logoEl = document.getElementById("project-logo");
   const titleEl = document.getElementById("project-title");
   const descEl = document.getElementById("project-desc");
+  const kindEl = document.getElementById("project-kind");
   const introEl = document.getElementById("project-intro");
   const problemsEl = document.getElementById("project-problems");
   const solutionEl = document.getElementById("project-solution");
+  const problemsTitleEl = document.getElementById("project-problems-title");
+  const solutionTitleEl = document.getElementById("project-solution-title");
+  const baTitleEl = document.getElementById("project-ba-title");
   const galleryEl = document.getElementById("project-gallery");
   const otherEl = document.getElementById("other-projects");
   const otherLabel = document.getElementById("other-label");
@@ -534,6 +541,7 @@
   const fillBeforeAfter = (data) => {
     if (!baBlock || !baBefore || !baAfter) return;
     const ba = data.beforeAfter;
+    const afterTab = baBlock.querySelector('.ba-tab[data-ba="after"]');
     if (!ba?.before || !ba?.after) {
       baBlock.hidden = true;
       baBefore.innerHTML = "";
@@ -546,6 +554,14 @@
       .map((item) => `<li>${item}</li>`)
       .join("");
 
+    const isSketch = data.group === "portfolio";
+    if (baTitleEl) {
+      baTitleEl.textContent = isSketch ? "Было и концепт" : "До и после";
+    }
+    if (afterTab) {
+      afterTab.textContent = isSketch ? "Концепт" : "После";
+    }
+
     baBlock.hidden = false;
     // Hide gallery below — after shot already lives in the «После» tab
     if (shotFrame) shotFrame.hidden = true;
@@ -553,10 +569,13 @@
     baBefore.innerHTML = `
       ${shotHtml(ba.before, `${data.title} — до`, { eager: true })}
       <div class="ba-notes">
-        <p class="ba-notes-title">Что не так</p>
+        <p class="ba-notes-title">${isSketch ? "Что правим в наброске" : "Что не так"}</p>
         <ul>${issues}</ul>
       </div>`;
-    baAfter.innerHTML = shotHtml(ba.after, `${data.title} — после`);
+    baAfter.innerHTML = shotHtml(
+      ba.after,
+      `${data.title} — ${isSketch ? "концепт" : "после"}`
+    );
     // Warm after image while user reads «До»
     const warm = new Image();
     warm.decoding = "async";
@@ -588,17 +607,28 @@
     const data = projects[id];
     if (!data) return false;
 
+    const isSketch = data.group === "portfolio";
+
     metaBox.innerHTML = data.meta
       .map(([label, value]) => `<div><span>${label}</span><strong>${value}</strong></div>`)
       .join("");
 
     logoEl.innerHTML = `<img src="${data.icon}" alt="" width="48" height="48" decoding="async">`;
     logoEl.className = "project-logo";
+    if (kindEl) kindEl.textContent = isSketch ? "Набросок" : "Проект";
     titleEl.textContent = data.title;
     descEl.textContent = data.desc;
     introEl.textContent = data.intro || "";
     problemsEl.textContent = data.problems || "";
     solutionEl.textContent = data.solution || "";
+    if (problemsTitleEl) {
+      problemsTitleEl.textContent = isSketch
+        ? "Что не так сейчас"
+        : "Проблемы, которые необходимо решить";
+    }
+    if (solutionTitleEl) {
+      solutionTitleEl.textContent = isSketch ? "Идея наброска" : "Решение";
+    }
 
     galleryEl.innerHTML = data.shots
       .map((src, i) => {
@@ -610,8 +640,7 @@
     fillBeforeAfter(data);
 
     if (otherLabel) {
-      otherLabel.textContent =
-        data.group === "portfolio" ? "Другие наброски" : "Другие проекты";
+      otherLabel.textContent = isSketch ? "Другие наброски" : "Другие проекты";
     }
 
     otherEl.innerHTML = Object.entries(projects)
@@ -664,42 +693,46 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const openProject = async (id, { push = true } = {}) => {
+  const openProject = async (rawId, { push = true } = {}) => {
+    const id = resolveProjectId(rawId);
     if (!projects[id] || busy) return;
     busy = true;
 
-    const switching = !projectPanel.hidden && currentId && currentId !== id;
-    const fromHome = projectPanel.hidden;
+    try {
+      const switching = !projectPanel.hidden && currentId && currentId !== id;
+      const fromHome = projectPanel.hidden;
 
-    if (fromHome) {
-      fillProject(id);
-      resetReveals();
-      await swapPanels(home, projectPanel);
-    } else if (switching) {
-      projectPanel.classList.add("is-leaving");
-      await wait(240);
-      fillProject(id);
-      resetReveals();
-      projectPanel.classList.remove("is-leaving");
-      projectPanel.classList.add("is-entering");
-      void projectPanel.offsetWidth;
-      projectPanel.classList.remove("is-entering");
-    } else {
-      fillProject(id);
-      resetReveals();
-      projectPanel.hidden = false;
-      home.hidden = true;
-    }
+      if (fromHome) {
+        fillProject(id);
+        resetReveals();
+        await swapPanels(home, projectPanel);
+      } else if (switching) {
+        projectPanel.classList.add("is-leaving");
+        await wait(240);
+        fillProject(id);
+        resetReveals();
+        projectPanel.classList.remove("is-leaving");
+        projectPanel.classList.add("is-entering");
+        void projectPanel.offsetWidth;
+        projectPanel.classList.remove("is-entering");
+      } else {
+        fillProject(id);
+        resetReveals();
+        projectPanel.hidden = false;
+        home.hidden = true;
+      }
 
-    currentId = id;
-    setNavActive("project");
-    if (push) {
-      window.history.pushState({ view: "project", id }, "", `#project/${id}`);
+      currentId = id;
+      setNavActive("project");
+      if (push) {
+        window.history.pushState({ view: "project", id }, "", `#project/${id}`);
+      }
+      window.scrollTo({ top: 0, behavior: "auto" });
+      await wait(40);
+      await playReveals();
+    } finally {
+      busy = false;
     }
-    window.scrollTo({ top: 0, behavior: "auto" });
-    await wait(40);
-    await playReveals();
-    busy = false;
   };
 
   document.addEventListener("click", (e) => {
@@ -737,11 +770,12 @@
   });
 
   window.addEventListener("popstate", () => {
-    const match = window.location.hash.match(/^#project\/([a-z]+)/i);
-    if (match && projects[match[1]]) openProject(match[1], { push: false });
-    else showHome({ push: false });
+    const match = window.location.hash.match(/^#project\/([a-z0-9-]+)/i);
+    if (match && projects[resolveProjectId(match[1])]) {
+      openProject(match[1], { push: false });
+    } else showHome({ push: false });
   });
 
-  const boot = window.location.hash.match(/^#project\/([a-z]+)/i);
-  if (boot && projects[boot[1]]) openProject(boot[1], { push: false });
+  const boot = window.location.hash.match(/^#project\/([a-z0-9-]+)/i);
+  if (boot && projects[resolveProjectId(boot[1])]) openProject(boot[1], { push: false });
 })();
