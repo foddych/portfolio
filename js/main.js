@@ -306,33 +306,176 @@
     document.body.classList.add("service-open");
   };
 
+  const reviewCriteria = [
+    ["quality", "Качество"],
+    ["timing", "Сроки"],
+    ["talk", "Общение"],
+  ];
+
   const allReviews = [
     {
       text: "Сайт стал выглядеть современно, цены и станции наконец в одном месте. Клиенты стали чаще писать с формы.",
       name: "Андрей Смирнов",
       company: "Petrol-Люкс",
+      scores: { quality: 5, timing: 5, talk: 5 },
     },
     {
       text: "Сделали аккуратно и по делу: структура понятная, услуги читаются, заявки пошли быстрее обычного.",
       name: "Елена Котова",
       company: "Glob-IT",
+      scores: { quality: 5, timing: 4, talk: 5 },
     },
     {
       text: "Быстро собрали лендинг и довели до запуска. Удобно, что сразу показали тестовый вариант.",
       name: "Максим Орлов",
       company: "ProfiTE",
+      scores: { quality: 5, timing: 5, talk: 5 },
     },
     {
       text: "Раньше сайт выглядел устаревшим. После редизайна ассортимент читается, клиенты чаще звонят и спрашивают доставку.",
       name: "Олег Ефимов",
       company: "Зоомир",
+      scores: { quality: 5, timing: 4, talk: 4 },
     },
     {
       text: "Нужен был понятный медтех-лендинг без воды. Сделали структуру, адаптив и форму — стало проще объяснять услуги.",
       name: "Татьяна Волкова",
       company: "Inmis",
+      scores: { quality: 5, timing: 5, talk: 4 },
     },
   ];
+
+  const scoreDots = (value) => {
+    const n = Math.max(0, Math.min(5, Number(value) || 0));
+    return Array.from({ length: 5 }, (_, i) =>
+      `<i class="${i < n ? "is-on" : ""}" aria-hidden="true"></i>`
+    ).join("");
+  };
+
+  const scoresHtml = (scores = {}) =>
+    reviewCriteria
+      .map(
+        ([key, label]) => `
+      <div class="review-score">
+        <span>${label}</span>
+        <span class="review-dots-score" aria-label="${label}: ${scores[key] || 0} из 5">${scoreDots(scores[key])}</span>
+      </div>`
+      )
+      .join("");
+
+  const scoresBlock = (scores) =>
+    `<div class="review-scores">${scoresHtml(scores)}</div>`;
+
+  const reviewCarousel = document.querySelector("[data-review-carousel]");
+  const reviewCard = document.querySelector("[data-review-card]");
+  const reviewText = document.querySelector("[data-review-text]");
+  const reviewName = document.querySelector("[data-review-name]");
+  const reviewCompany = document.querySelector("[data-review-company]");
+  const reviewScoresEl = document.querySelector("[data-review-scores]");
+  const reviewDotsEl = document.querySelector("[data-review-dots]");
+  let reviewIndex = 0;
+  let reviewBusy = false;
+  let reviewTimer = null;
+
+  const fillReviewCard = (item) => {
+    if (!item || !reviewCard) return;
+    if (reviewScoresEl) reviewScoresEl.innerHTML = scoresHtml(item.scores);
+    if (reviewText) reviewText.textContent = `«${item.text}»`;
+    if (reviewName) reviewName.textContent = item.name;
+    if (reviewCompany) reviewCompany.textContent = item.company;
+  };
+
+  const renderReviewDots = () => {
+    if (!reviewDotsEl) return;
+    reviewDotsEl.innerHTML = allReviews
+      .map(
+        (_, i) =>
+          `<button class="review-dot${i === reviewIndex ? " is-active" : ""}" type="button" data-review-go="${i}" role="tab" aria-selected="${i === reviewIndex ? "true" : "false"}" aria-label="Отзыв ${i + 1}"></button>`
+      )
+      .join("");
+  };
+
+  const stopReviewAuto = () => {
+    if (reviewTimer) {
+      window.clearInterval(reviewTimer);
+      reviewTimer = null;
+    }
+  };
+
+  let startReviewAuto = () => {};
+  let showReview = async () => {};
+
+  const initReviewCarousel = (waitFn) => {
+    if (!reviewCarousel || !allReviews.length) return;
+
+    showReview = async (nextIndex, dir = 1) => {
+      if (!reviewCard || !allReviews.length || reviewBusy) return;
+      const len = allReviews.length;
+      const index = ((nextIndex % len) + len) % len;
+      if (index === reviewIndex && reviewText?.textContent) return;
+
+      reviewBusy = true;
+      const leaving = dir >= 0 ? "is-leave-left" : "is-leave-right";
+      const entering = dir >= 0 ? "is-enter-right" : "is-enter-left";
+
+      reviewCard.classList.remove("is-in", "is-enter-right", "is-enter-left");
+      reviewCard.classList.add(leaving);
+      await waitFn(280);
+
+      reviewIndex = index;
+      fillReviewCard(allReviews[reviewIndex]);
+      renderReviewDots();
+
+      reviewCard.classList.remove(leaving);
+      reviewCard.classList.add(entering);
+      void reviewCard.offsetWidth;
+      reviewCard.classList.remove(entering);
+      reviewCard.classList.add("is-in");
+      reviewBusy = false;
+    };
+
+    startReviewAuto = () => {
+      stopReviewAuto();
+      if (allReviews.length < 2) return;
+      reviewTimer = window.setInterval(() => {
+        if (document.body.classList.contains("list-open")) return;
+        if (document.hidden) return;
+        showReview(reviewIndex + 1, 1);
+      }, 5600);
+    };
+
+    fillReviewCard(allReviews[0]);
+    renderReviewDots();
+    reviewCard?.classList.add("is-in");
+
+    reviewCarousel.addEventListener("click", (e) => {
+      if (e.target.closest("[data-review-prev]")) {
+        showReview(reviewIndex - 1, -1);
+        startReviewAuto();
+        return;
+      }
+      if (e.target.closest("[data-review-next]")) {
+        showReview(reviewIndex + 1, 1);
+        startReviewAuto();
+        return;
+      }
+      const go = e.target.closest("[data-review-go]");
+      if (go) {
+        const i = Number(go.getAttribute("data-review-go"));
+        showReview(i, i > reviewIndex ? 1 : -1);
+        startReviewAuto();
+      }
+    });
+
+    reviewCarousel.addEventListener("mouseenter", stopReviewAuto);
+    reviewCarousel.addEventListener("mouseleave", startReviewAuto);
+    reviewCarousel.addEventListener("focusin", stopReviewAuto);
+    reviewCarousel.addEventListener("focusout", (e) => {
+      if (!reviewCarousel.contains(e.relatedTarget)) startReviewAuto();
+    });
+
+    startReviewAuto();
+  };
 
   const listModal = document.getElementById("list-modal");
   const listTitle = document.getElementById("list-title");
@@ -398,6 +541,7 @@
         .map(
           (item) => `
           <article class="review">
+            ${scoresBlock(item.scores)}
             <p>«${item.text}»</p>
             <footer>
               <strong>${item.name}</strong>
@@ -512,6 +656,8 @@
   let currentId = null;
 
   const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
+
+  initReviewCarousel(wait);
 
   const shotHtml = (src, alt, { eager = false } = {}) => {
     const load = eager

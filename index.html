@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260807b">
+  <link rel="stylesheet" href="css/styles.css?v=20260807c">
 </head>
 <body>
   <header class="nav-bar">
@@ -211,28 +211,22 @@
           <p class="meta-dot">Отзывы</p>
           <button class="chip chip-btn" type="button" data-all="reviews" aria-haspopup="dialog">Все →</button>
         </div>
-        <div class="reviews">
-          <article class="review">
-            <p>«Сайт стал выглядеть современно, цены и станции наконец в одном месте. Клиенты стали чаще писать с формы.»</p>
-            <footer>
-              <strong>Андрей Смирнов</strong>
-              <span>Petrol-Люкс</span>
-            </footer>
-          </article>
-          <article class="review">
-            <p>«Сделали аккуратно и по делу: структура понятная, услуги читаются, заявки пошли быстрее обычного.»</p>
-            <footer>
-              <strong>Елена Котова</strong>
-              <span>Glob-IT</span>
-            </footer>
-          </article>
-          <article class="review">
-            <p>«Быстро собрали лендинг и довели до запуска. Удобно, что сразу показали тестовый вариант.»</p>
-            <footer>
-              <strong>Максим Орлов</strong>
-              <span>ProfiTE</span>
-            </footer>
-          </article>
+        <div class="review-carousel" data-review-carousel>
+          <div class="review-stage" aria-live="polite">
+            <article class="review is-in" data-review-card>
+              <div class="review-scores" data-review-scores></div>
+              <p data-review-text></p>
+              <footer>
+                <strong data-review-name></strong>
+                <span data-review-company></span>
+              </footer>
+            </article>
+          </div>
+          <div class="review-controls">
+            <button class="review-nav-btn" type="button" data-review-prev aria-label="Предыдущий отзыв">‹</button>
+            <div class="review-dots" data-review-dots role="tablist" aria-label="Отзывы"></div>
+            <button class="review-nav-btn" type="button" data-review-next aria-label="Следующий отзыв">›</button>
+          </div>
         </div>
       </section>
 
@@ -447,6 +441,6 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=20260807b"></script>
+  <script src="js/main.js?v=20260807c"></script>
 </body>
 </html>
