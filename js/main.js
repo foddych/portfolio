@@ -5,7 +5,6 @@
       title: "ProfiTE",
       icon: "assets/icons/profite.webp",
       desc: "Запущенный B2B-сайт интегратора 1С: услуги, калькулятор и быстрый контакт.",
-      liveUrl: "https://profite.ru",
       intro:
         "Реализованный проект: обновил сайт интегратора 1С так, чтобы клиент быстро понимал услуги и мог оценить маршрут обновления. Акцент — доверие франчайзи и короткий путь к заявке. Сайт в работе: profite.ru.",
       problems:
@@ -197,7 +196,7 @@
       lead: "Обновляю внешний вид, структуру и путь пользователя — чтобы сайт выглядел современно и вёл к заявке.",
       test: "1–2 дня",
       full: "3–7 дней",
-      price: "от 3 000 ₽",
+      price: "Индивидуально",
       items: [
         "Анализ текущего сайта и узких мест",
         "Новая структура блоков и иерархия",
@@ -212,7 +211,7 @@
       lead: "Собираю одну страницу под конкретную задачу: оффер, доверие и быстрый контакт.",
       test: "1–2 дня",
       full: "3–7 дней",
-      price: "от 3 000 ₽",
+      price: "Индивидуально",
       items: [
         "Hero и оффер под вашу аудиторию",
         "Блоки преимуществ, услуг и доказательств",
@@ -227,7 +226,7 @@
       lead: "Делаю витрину бренда или магазина: каталог, атмосфера и понятный путь к покупке.",
       test: "1–2 дня",
       full: "3–7 дней",
-      price: "от 3 000 ₽",
+      price: "Индивидуально",
       items: [
         "Подача бренда и ассортимента",
         "Карточки товаров / направлений",
@@ -242,7 +241,7 @@
       lead: "Собираю ботов под заявки, FAQ и сценарии — чтобы клиент быстро получал ответ.",
       test: "1–2 дня",
       full: "3–7 дней",
-      price: "от 3 000 ₽",
+      price: "Индивидуально",
       items: [
         "Сценарий диалога под задачу",
         "Приём заявок и уведомления",
@@ -257,7 +256,7 @@
       lead: "Помогаю с обновлением 1С, настройкой и подключением ККТ / онлайн-касс — без лишней путаницы.",
       test: "1–2 дня",
       full: "2–5 дней",
-      price: "от 3 000 ₽",
+      price: "Индивидуально",
       items: [
         "Обновление конфигураций 1С",
         "Проверка и настройка обменов",
@@ -288,25 +287,19 @@
   const openService = (id) => {
     const data = services[id];
     if (!data || !serviceModal) return;
-    const titleKey = `services.${id}.t`;
-    const leadKey = `services.${id}.d`;
-    serviceTag.textContent = tt("services.from", data.price);
-    serviceTitle.textContent = tt(titleKey, data.title);
-    serviceLead.textContent = tt(leadKey, data.lead);
+    serviceTag.textContent = data.tag;
+    serviceTitle.textContent = data.title;
+    serviceLead.textContent = data.lead;
     serviceTest.textContent = data.test;
     serviceFull.textContent = data.full;
-    servicePrice.textContent = tt("services.from", data.price);
+    servicePrice.textContent = data.price;
     serviceList.innerHTML = data.items.map((item) => `<li>${item}</li>`).join("");
     serviceNote.textContent =
-      window.PortfolioI18n?.getLang() === "en"
-        ? "Timeline depends on scope. Draft usually 1–2 days, finished from 3 to 7. Price starts from 3,000 ₽ and is agreed individually."
-        : "Срок зависит от сложности. Тестовый вариант — обычно 1–2 дня, готовый — от 3 до 7 дней. Старт — от 3 000 ₽, объём обговаривается индивидуально.";
+      "Срок зависит от сложности. Тестовый вариант — обычно 1–2 дня, готовый — от 3 до 7 дней. Цена и объём обговариваются индивидуально.";
     serviceIcon.innerHTML = `<span class="ico ${data.icon}" aria-hidden="true"></span>`;
     if (serviceTg) {
       serviceTg.href = `https://t.me/foddy1337?text=${encodeURIComponent(
-        window.PortfolioI18n?.getLang() === "en"
-          ? `Hi! Interested in: ${serviceTitle.textContent}`
-          : `Привет! Интересует услуга: ${serviceTitle.textContent}`
+        `Привет! Интересует услуга: ${data.title}`
       )}`;
     }
     serviceModal.hidden = false;
@@ -314,13 +307,34 @@
   };
 
   const reviewCriteria = [
-    ["quality", "quality"],
-    ["timing", "timing"],
-    ["talk", "talk"],
+    ["quality", "Качество"],
+    ["timing", "Сроки"],
+    ["talk", "Общение"],
   ];
 
-  const tt = (key, fallback) =>
-    (window.PortfolioI18n && window.PortfolioI18n.t(key)) || fallback || key;
+  const allBlog = [
+    {
+      id: "draft-fast",
+      title: "Зачем сначала тестовый вариант",
+      date: "2025",
+      lead: "Черновик за 1–2 дня снимает споры о вкусе и сразу показывает маршрут к заявке.",
+      body: "Клиенту проще править живой каркас, чем абстрактный мудборд. Тестовый вариант фиксирует структуру, оффер и CTA — и только потом доводим визуал до финала.",
+    },
+    {
+      id: "before-after",
+      title: "До/после: что реально менять",
+      date: "2025",
+      lead: "Не каждый редизайн должен быть «с нуля». Часто хватает иерархии, первого экрана и пути к контакту.",
+      body: "В набросках я сравниваю текущий сайт и концепт: что мешает доверию, где теряется оффер, почему телефон неудобен. Это быстрее продаёт идею, чем длинный бриф.",
+    },
+    {
+      id: "first-screen",
+      title: "Первый экран без воды",
+      date: "2025",
+      lead: "На первом экране нужны оффер, доверие и одно действие — всё остальное можно ниже.",
+      body: "Если hero рассказывает обо всём сразу, заявка теряется. Оставляю короткое обещание, понятный CTA и один визуальный якорь. Детали, тарифы и FAQ — уже после того, как человек понял «зачем я здесь».",
+    },
+  ];
 
   const allReviews = [
     {
@@ -364,14 +378,13 @@
 
   const scoresHtml = (scores = {}) =>
     reviewCriteria
-      .map(([key, labelKey]) => {
-        const label = tt(labelKey, labelKey);
-        return `
+      .map(
+        ([key, label]) => `
       <div class="review-score">
         <span>${label}</span>
-        <span class="review-dots-score" aria-label="${label}: ${scores[key] || 0} / 5">${scoreDots(scores[key])}</span>
-      </div>`;
-      })
+        <span class="review-dots-score" aria-label="${label}: ${scores[key] || 0} из 5">${scoreDots(scores[key])}</span>
+      </div>`
+      )
       .join("");
 
   const scoresBlock = (scores) =>
@@ -546,8 +559,8 @@
         )
         .join("")}</div>`;
     } else if (kind === "reviews") {
-      listTag.textContent = tt("reviews.title", "Отзывы");
-      listTitle.textContent = tt("reviews.all", "Все →").replace("→", "").trim() || "All";
+      listTag.textContent = "Клиенты";
+      listTitle.textContent = "Все отзывы";
       listBody.innerHTML = `<div class="reviews">${allReviews
         .map(
           (item) => `
@@ -562,10 +575,9 @@
         )
         .join("")}</div>`;
     } else if (kind === "blog") {
-      const posts = (window.PortfolioI18n && window.PortfolioI18n.getBlog()) || [];
-      listTag.textContent = tt("blog.title", "Заметки");
-      listTitle.textContent = tt("blog.all", "Все →").replace("→", "").trim() || "All";
-      listBody.innerHTML = `<div class="blog-list">${posts
+      listTag.textContent = "Блог";
+      listTitle.textContent = "Все заметки";
+      listBody.innerHTML = `<div class="blog-list">${allBlog
         .map(
           (item) => `
           <article class="blog-post">
@@ -614,29 +626,11 @@
     }
   });
 
-  document.querySelector("[data-lang-toggle]")?.addEventListener("click", () => {
-    window.PortfolioI18n?.toggleLang();
-  });
-
-  const renderFaq = () => {
-    const root = document.getElementById("faq-list");
-    if (!root || !window.PortfolioI18n) return;
-    root.innerHTML = window.PortfolioI18n.getFaq()
-      .map(
-        ([q, a]) => `
-      <details class="faq-item">
-        <summary>${q}</summary>
-        <p>${a}</p>
-      </details>`
-      )
-      .join("");
-  };
-
   const renderBlogPreview = () => {
     const root = document.getElementById("blog-preview");
-    if (!root || !window.PortfolioI18n) return;
-    const posts = window.PortfolioI18n.getBlog().slice(0, 3);
-    root.innerHTML = posts
+    if (!root) return;
+    root.innerHTML = allBlog
+      .slice(0, 3)
       .map(
         (item) => `
       <button class="row" type="button" data-all="blog">
@@ -651,34 +645,11 @@
       .join("");
   };
 
-  document.getElementById("lead-form")?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const input = document.getElementById("lead-text");
-    const task = (input?.value || "").trim();
-    if (!task) return;
-    const text =
-      window.PortfolioI18n?.getLang() === "en"
-        ? `Hi! Task: ${task}`
-        : `Привет! Задача: ${task}`;
-    window.open(
-      `https://t.me/foddy1337?text=${encodeURIComponent(text)}`,
-      "_blank",
-      "noopener"
-    );
-  });
-
-  document.addEventListener("portfolio:lang", () => {
-    renderFaq();
-    renderBlogPreview();
-    if (allReviews[reviewIndex]) fillReviewCard(allReviews[reviewIndex]);
-    if (listKind === "blog" || listKind === "reviews") openList(listKind);
-  });
-
   const toast = document.getElementById("toast");
   let toastTimer;
   const showToast = (msg) => {
     if (!toast) return;
-    toast.textContent = msg || tt("toast.email", "Email скопирован");
+    toast.textContent = msg;
     toast.hidden = false;
     window.clearTimeout(toastTimer);
     toastTimer = window.setTimeout(() => {
@@ -691,7 +662,7 @@
       const email = btn.getAttribute("data-email") || "";
       try {
         await navigator.clipboard.writeText(email);
-        showToast(tt("toast.email", "Email скопирован"));
+        showToast("Email скопирован");
       } catch {
         showToast(email);
       }
@@ -732,7 +703,6 @@
   const solutionTitleEl = document.getElementById("project-solution-title");
   const baTitleEl = document.getElementById("project-ba-title");
   const galleryEl = document.getElementById("project-gallery");
-  const liveEl = document.getElementById("project-live");
   const otherEl = document.getElementById("other-projects");
   const otherLabel = document.getElementById("other-label");
   const baBlock = document.getElementById("project-ba");
@@ -834,11 +804,6 @@
       items[i].classList.add("is-in");
       await wait(70);
     }
-    const shots = [...projectPanel.querySelectorAll(".shot")];
-    shots.forEach((shot, i) => {
-      shot.style.setProperty("--shot-delay", `${80 + i * 70}ms`);
-      shot.classList.add("is-shot-in");
-    });
   };
 
   const fillProject = (id) => {
@@ -846,7 +811,6 @@
     if (!data) return false;
 
     const isSketch = data.group === "portfolio";
-    const lang = window.PortfolioI18n?.getLang?.() || "ru";
 
     metaBox.innerHTML = data.meta
       .map(([label, value]) => `<div><span>${label}</span><strong>${value}</strong></div>`)
@@ -854,15 +818,7 @@
 
     logoEl.innerHTML = `<img src="${data.icon}" alt="" width="48" height="48" decoding="async">`;
     logoEl.className = "project-logo";
-    if (kindEl) {
-      kindEl.textContent = isSketch
-        ? lang === "en"
-          ? "Sketch"
-          : "Набросок"
-        : lang === "en"
-          ? "Project"
-          : "Проект";
-    }
+    if (kindEl) kindEl.textContent = isSketch ? "Набросок" : "Проект";
     titleEl.textContent = data.title;
     descEl.textContent = data.desc;
     introEl.textContent = data.intro || "";
@@ -870,50 +826,24 @@
     solutionEl.textContent = data.solution || "";
     if (problemsTitleEl) {
       problemsTitleEl.textContent = isSketch
-        ? lang === "en"
-          ? "What's weak now"
-          : "Что не так сейчас"
-        : lang === "en"
-          ? "Problems to solve"
-          : "Проблемы, которые необходимо решить";
+        ? "Что не так сейчас"
+        : "Проблемы, которые необходимо решить";
     }
     if (solutionTitleEl) {
-      solutionTitleEl.textContent = isSketch
-        ? lang === "en"
-          ? "Sketch idea"
-          : "Идея наброска"
-        : lang === "en"
-          ? "Solution"
-          : "Решение";
-    }
-
-    if (liveEl) {
-      if (data.liveUrl) {
-        liveEl.hidden = false;
-        liveEl.href = data.liveUrl;
-      } else {
-        liveEl.hidden = true;
-        liveEl.removeAttribute("href");
-      }
+      solutionTitleEl.textContent = isSketch ? "Идея наброска" : "Решение";
     }
 
     galleryEl.innerHTML = data.shots
       .map((src, i) => {
         const tall = /mobile|preview-mobile|max-mobile/i.test(src);
-        return `<figure class="shot ${tall ? "is-tall" : ""}"><img src="${src}" alt="${data.title} — ${i + 1}" loading="lazy" decoding="async"></figure>`;
+        return `<figure class="shot ${tall ? "is-tall" : ""}"><img src="${src}" alt="${data.title} — кадр ${i + 1}" loading="lazy" decoding="async"></figure>`;
       })
       .join("");
 
     fillBeforeAfter(data);
 
     if (otherLabel) {
-      otherLabel.textContent = isSketch
-        ? lang === "en"
-          ? "More sketches"
-          : "Другие наброски"
-        : lang === "en"
-          ? "More projects"
-          : "Другие проекты";
+      otherLabel.textContent = isSketch ? "Другие наброски" : "Другие проекты";
     }
 
     otherEl.innerHTML = Object.entries(projects)
@@ -1051,8 +981,5 @@
 
   const boot = window.location.hash.match(/^#project\/([a-z0-9-]+)/i);
   if (boot && projects[resolveProjectId(boot[1])]) openProject(boot[1], { push: false });
-
-  window.PortfolioI18n?.applyLang();
-  renderFaq();
   renderBlogPreview();
 })();
