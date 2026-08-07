@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>foddyzorich — портфолио</title>
-  <meta name="description" content="Портфолио: редизайн сайтов, лендинги, боты Telegram и Max.">
+  <meta name="description" content="Портфолио: редизайн сайтов, лендинги, магазины и бренды.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="foddyzorich">
+  <meta property="og:title" content="foddyzorich — портфолио">
+  <meta property="og:description" content="Редизайн сайтов, лендинги, магазины и боты Telegram/Max.">
+  <meta property="og:image" content="https://foddych.github.io/portfolio/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://foddych.github.io/portfolio/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="foddyzorich — портфолио">
+  <meta name="twitter:description" content="Редизайн сайтов, лендинги, магазины и боты Telegram/Max.">
+  <meta name="twitter:image" content="https://foddych.github.io/portfolio/assets/og.png">
+  <link rel="preload" as="image" href="assets/avatar.webp" type="image/webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,23 +27,26 @@
   <header class="nav-bar">
     <nav class="nav-icons" aria-label="Навигация">
       <a href="#top" class="nav-icon is-active" data-panel="home" aria-label="Главная">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5Z"/></svg>
+        <span class="ico ico-home" aria-hidden="true"></span>
       </a>
       <a href="#about" class="nav-icon" data-panel="home" aria-label="Обо мне">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.1"/><path d="M5.2 19.2c1.7-3.1 4.1-4.6 6.8-4.6s5.1 1.5 6.8 4.6"/></svg>
+        <span class="ico ico-person" aria-hidden="true"></span>
       </a>
       <a href="#works" class="nav-icon" data-panel="home" aria-label="Проекты">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="M3.5 9.5h17"/></svg>
+        <span class="ico ico-projects" aria-hidden="true"></span>
       </a>
       <a href="#services" class="nav-icon" data-panel="home" aria-label="Услуги">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6.5 8.5h11v11h-11z"/><path d="M9 5.5h6l1.5 3H7.5L9 5.5Z"/></svg>
+        <span class="ico ico-services" aria-hidden="true"></span>
       </a>
     </nav>
     <div class="nav-actions">
       <button class="theme-toggle" type="button" aria-label="Тема">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16.4 14.2A6.3 6.3 0 0 1 9.8 7.6 6.8 6.8 0 1 0 16.4 14.2Z"/></svg>
+        <span class="ico ico-theme" aria-hidden="true"></span>
       </button>
-      <a class="btn btn-dark btn-sm" href="#contact"><span class="plus">+</span> Написать</a>
+      <a class="btn btn-dark btn-sm" href="#contact">
+        <span class="ico ico-write" aria-hidden="true"></span>
+        Написать
+      </a>
     </div>
   </header>
 
@@ -39,76 +55,98 @@
     <div class="panel is-active" id="panel-home" data-panel-view="home">
       <section class="hero" id="about">
         <div class="hero-top">
-          <p class="meta-dot">Веб-редизайн · боты</p>
+          <p class="meta-dot">Веб-разработчик</p>
           <span class="status-pill"><i></i> Открыт к проектам</span>
         </div>
         <div class="hero-row">
           <div class="hero-copy">
             <h1>Я Кирилл</h1>
-            <p>Делаю сайты и ботов под задачу бизнеса: лендинги, редизайн, ботов в Telegram и Max.</p>
+            <p>Делаю сайты под задачу бизнеса: лендинги, редизайн и магазины, ботов.</p>
             <div class="actions">
-              <a class="btn btn-dark" href="#contact"><span class="plus">+</span> Написать</a>
+              <a class="btn btn-dark" href="#contact">
+                <span class="ico ico-write" aria-hidden="true"></span>
+                Написать
+              </a>
               <a class="btn btn-outline" href="https://t.me/foddy1337" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.3 3.7 11.2c-1.2.5-1.2 1.1-.2 1.4l4.6 1.4 1.8 5.4c.2.6.4.8 1 .8.6 0 .9-.3 1.2-.6l2.7-2.6 5.6 4.1c1 .6 1.8.3 2-.9L23 5.6c.3-1.4-.5-2-1.5-1.3Z"/></svg>
+                <span class="ico ico-telegram" aria-hidden="true"></span>
                 Telegram
               </a>
               <a class="btn btn-outline" href="https://vk.com/foddy1337" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.8 18.4c-5.6 0-8.8-3.8-8.9-10.2h2.8c.1 4.6 2.1 6.6 3.7 7V8.2h2.7v3.9c1.5-.2 3.2-1.9 3.7-3.9h2.7c-.4 2.4-2.3 4.2-3.6 4.9 1.3.6 3.5 2.2 4.3 5.1h-2.9c-.6-1.9-2.2-3.4-4.2-3.6v3.6h-.1Z"/></svg>
+                <svg class="brand-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.8 18.4c-5.6 0-8.8-3.8-8.9-10.2h2.8c.1 4.6 2.1 6.6 3.7 7V8.2h2.7v3.9c1.5-.2 3.2-1.9 3.7-3.9h2.7c-.4 2.4-2.3 4.2-3.6 4.9 1.3.6 3.5 2.2 4.3 5.1h-2.9c-.6-1.9-2.2-3.4-4.2-3.6v3.6h-.1Z"/></svg>
                 VK
               </a>
               <button class="btn btn-outline" type="button" data-email="kirya.domantsev@bk.ru">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M6 16V6a2 2 0 0 1 2-2h10"/></svg>
+                <span class="ico ico-copy" aria-hidden="true"></span>
                 Скопировать email
               </button>
             </div>
           </div>
-          <div class="avatar" aria-hidden="true"><span>К</span></div>
+          <div class="avatar" aria-hidden="true">
+            <img src="assets/avatar.webp" alt="" width="96" height="96" decoding="async" fetchpriority="high">
+          </div>
         </div>
       </section>
 
       <section class="block" id="works">
         <div class="block-head">
           <p class="meta-dot">Проекты</p>
-          <span class="chip">Все →</span>
+          <button class="chip chip-btn" type="button" data-all="works" aria-haspopup="dialog">Все →</button>
+        </div>
+        <div class="rows">
+          <button class="row" type="button" data-open="profite">
+            <span class="row-icon"><img src="assets/icons/profite.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
+            <span class="row-text">
+              <strong>ProfiTE</strong>
+              <small>Сайт · 1С, B2B лендинг</small>
+            </span>
+            <span class="chev" aria-hidden="true">›</span>
+          </button>
+          <button class="row" type="button" data-open="profitebot">
+            <span class="row-icon"><img src="assets/icons/bots.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
+            <span class="row-text">
+              <strong>ProfiTE · бот</strong>
+              <small>Telegram / Max · подсчёт обновлений</small>
+            </span>
+            <span class="chev" aria-hidden="true">›</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="block" id="portfolio">
+        <div class="block-head">
+          <p class="meta-dot">Портфолио</p>
+          <button class="chip chip-btn" type="button" data-all="portfolio" aria-haspopup="dialog">Все →</button>
         </div>
         <div class="rows">
           <button class="row" type="button" data-open="petrol">
-            <span class="row-icon"><img src="assets/icons/petrol.svg" alt=""></span>
+            <span class="row-icon"><img src="assets/icons/petrol.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
               <strong>Petrol-Люкс</strong>
-              <small>АЗС, one-pager, редизайн</small>
+              <small>Набросок · АЗС, one-pager</small>
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
           <button class="row" type="button" data-open="globit">
-            <span class="row-icon"><img src="assets/icons/globit.svg" alt=""></span>
+            <span class="row-icon"><img src="assets/icons/globit.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
               <strong>Glob-IT</strong>
-              <small>IT, lavender bento</small>
+              <small>Набросок · IT, lavender bento</small>
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
           <button class="row" type="button" data-open="inmis">
-            <span class="row-icon"><img src="assets/icons/inmis.svg" alt=""></span>
+            <span class="row-icon"><img src="assets/icons/inmis.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
               <strong>Inmis</strong>
-              <small>Медтех, продукт, лендинг</small>
+              <small>Набросок · медтех-лендинг</small>
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
-          <button class="row" type="button" data-open="profite">
-            <span class="row-icon"><img src="assets/icons/profite.svg" alt=""></span>
+          <button class="row" type="button" data-open="zoomir">
+            <span class="row-icon"><img src="assets/icons/zoomir.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
-              <strong>ProfiTE</strong>
-              <small>1С, B2B лендинг</small>
-            </span>
-            <span class="chev" aria-hidden="true">›</span>
-          </button>
-          <button class="row" type="button" data-open="bots">
-            <span class="row-icon"><img src="assets/icons/bots.svg" alt=""></span>
-            <span class="row-text">
-              <strong>Бот ProfiTE</strong>
-              <small>Telegram, Max</small>
+              <strong>Зоомир</strong>
+              <small>Набросок · зоомагазин</small>
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
@@ -120,48 +158,130 @@
           <p class="meta-dot">Услуги</p>
         </div>
         <div class="rows">
-          <div class="row row-static">
-            <span class="row-icon soft">✦</span>
+          <button class="row" type="button" data-service="redesign">
+            <span class="row-icon soft"><span class="ico ico-redesign" aria-hidden="true"></span></span>
             <span class="row-text">
               <strong>Редизайн сайтов</strong>
+              <small>Обновить внешний вид и структуру</small>
             </span>
             <span class="tag">Сайты</span>
             <span class="ext" aria-hidden="true">↗</span>
-          </div>
-          <div class="row row-static">
-            <span class="row-icon soft">▣</span>
+          </button>
+          <button class="row" type="button" data-service="landing">
+            <span class="row-icon soft"><span class="ico ico-landing" aria-hidden="true"></span></span>
             <span class="row-text">
               <strong>Лендинги под оффер</strong>
+              <small>Одна страница под задачу и заявку</small>
             </span>
             <span class="tag">Лендинг</span>
             <span class="ext" aria-hidden="true">↗</span>
-          </div>
-          <div class="row row-static">
-            <span class="row-icon soft">◎</span>
+          </button>
+          <button class="row" type="button" data-service="shop">
+            <span class="row-icon soft"><span class="ico ico-dog" aria-hidden="true"></span></span>
+            <span class="row-text">
+              <strong>Магазины и бренды</strong>
+              <small>Каталог, бренд, путь к покупке</small>
+            </span>
+            <span class="tag">Бренд</span>
+            <span class="ext" aria-hidden="true">↗</span>
+          </button>
+          <button class="row" type="button" data-service="bots">
+            <span class="row-icon soft"><span class="ico ico-bots" aria-hidden="true"></span></span>
             <span class="row-text">
               <strong>Боты Telegram и Max</strong>
+              <small>Автоответы, заявки, сценарии</small>
             </span>
             <span class="tag">Боты</span>
             <span class="ext" aria-hidden="true">↗</span>
-          </div>
+          </button>
+          <button class="row" type="button" data-service="update1c">
+            <span class="row-icon soft"><span class="ico ico-boxes" aria-hidden="true"></span></span>
+            <span class="row-text">
+              <strong>Обновление 1С и ККТ</strong>
+              <small>Обновления, настройка, онлайн-кассы</small>
+            </span>
+            <span class="tag">1С</span>
+            <span class="ext" aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="block" id="reviews">
+        <div class="block-head">
+          <p class="meta-dot">Отзывы</p>
+          <button class="chip chip-btn" type="button" data-all="reviews" aria-haspopup="dialog">Все →</button>
+        </div>
+        <div class="reviews">
+          <article class="review">
+            <p>«Сайт стал выглядеть современно, цены и станции наконец в одном месте. Клиенты стали чаще писать с формы.»</p>
+            <footer>
+              <strong>Андрей Смирнов</strong>
+              <span>Petrol-Люкс</span>
+            </footer>
+          </article>
+          <article class="review">
+            <p>«Сделали аккуратно и по делу: структура понятная, услуги читаются, заявки пошли быстрее обычного.»</p>
+            <footer>
+              <strong>Елена Котова</strong>
+              <span>Glob-IT</span>
+            </footer>
+          </article>
+          <article class="review">
+            <p>«Быстро собрали лендинг и довели до запуска. Удобно, что сразу показали тестовый вариант.»</p>
+            <footer>
+              <strong>Максим Орлов</strong>
+              <span>ProfiTE</span>
+            </footer>
+          </article>
+        </div>
+      </section>
+
+      <section class="block" id="faq">
+        <div class="block-head">
+          <p class="meta-dot">FAQ</p>
+        </div>
+        <div class="faq" id="faq-list">
+          <details class="faq-item">
+            <summary>Сколько занимает работа?</summary>
+            <p>Тестовый вариант обычно 1–2 дня, готовый — от 3 до 7 дней. Срок зависит от объёма блоков, текстов и правок.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Сколько правок входит?</summary>
+            <p>В рамках задачи — 1–2 круга правок по согласованному макету. Крупные новые блоки считаем отдельно.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Что нужно от меня для старта?</summary>
+            <p>Коротко: цель сайта, контакты, примеры которые нравятся, тексты/фото если есть, доступ к текущему сайту.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Как оплата?</summary>
+            <p>Обычно предоплата 50% на старт, остаток после согласования и перед передачей/публикацией.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Чем тестовый вариант отличается от готового?</summary>
+            <p>Тестовый — быстрый каркас под задачу. Готовый — финальный визуал, адаптив, правки и подготовка к запуску.</p>
+          </details>
         </div>
       </section>
 
       <section class="cta" id="contact">
         <h2>Давайте сделаем проект</h2>
-        <p>Напишите коротко задачу — сайт, редизайн или бот.</p>
+        <p>Напишите коротко задачу — сайт, редизайн, магазин или бота.</p>
         <div class="actions center">
           <a class="btn btn-tg" href="https://t.me/foddy1337" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.3 3.7 11.2c-1.2.5-1.2 1.1-.2 1.4l4.6 1.4 1.8 5.4c.2.6.4.8 1 .8.6 0 .9-.3 1.2-.6l2.7-2.6 5.6 4.1c1 .6 1.8.3 2-.9L23 5.6c.3-1.4-.5-2-1.5-1.3Z"/></svg>
+            <span class="ico ico-telegram" aria-hidden="true"></span>
             Telegram @foddy1337
           </a>
           <a class="btn btn-vk" href="https://vk.com/foddy1337" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.8 18.4c-5.6 0-8.8-3.8-8.9-10.2h2.8c.1 4.6 2.1 6.6 3.7 7V8.2h2.7v3.9c1.5-.2 3.2-1.9 3.7-3.9h2.7c-.4 2.4-2.3 4.2-3.6 4.9 1.3.6 3.5 2.2 4.3 5.1h-2.9c-.6-1.9-2.2-3.4-4.2-3.6v3.6h-.1Z"/></svg>
+            <svg class="brand-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.8 18.4c-5.6 0-8.8-3.8-8.9-10.2h2.8c.1 4.6 2.1 6.6 3.7 7V8.2h2.7v3.9c1.5-.2 3.2-1.9 3.7-3.9h2.7c-.4 2.4-2.3 4.2-3.6 4.9 1.3.6 3.5 2.2 4.3 5.1h-2.9c-.6-1.9-2.2-3.4-4.2-3.6v3.6h-.1Z"/></svg>
             VK @foddy1337
           </a>
-          <a class="btn btn-dark" href="mailto:kirya.domantsev@bk.ru"><span class="plus">+</span> Написать</a>
+          <a class="btn btn-dark" href="mailto:kirya.domantsev@bk.ru">
+            <span class="ico ico-write" aria-hidden="true"></span>
+            Написать
+          </a>
           <button class="btn btn-outline" type="button" data-email="kirya.domantsev@bk.ru">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M6 16V6a2 2 0 0 1 2-2h10"/></svg>
+            <span class="ico ico-copy" aria-hidden="true"></span>
             Скопировать email
           </button>
         </div>
@@ -172,15 +292,24 @@
           <span>Соцсети</span>
           <div class="socials">
             <a class="social social-tg" href="https://t.me/foddy1337" target="_blank" rel="noopener" aria-label="Telegram @foddy1337" title="Telegram @foddy1337">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.3 3.7 11.2c-1.2.5-1.2 1.1-.2 1.4l4.6 1.4 1.8 5.4c.2.6.4.8 1 .8.6 0 .9-.3 1.2-.6l2.7-2.6 5.6 4.1c1 .6 1.8.3 2-.9L23 5.6c.3-1.4-.5-2-1.5-1.3Z"/></svg>
+              <span class="ico ico-telegram" aria-hidden="true"></span>
             </a>
             <a class="social social-vk" href="https://vk.com/foddy1337" target="_blank" rel="noopener" aria-label="VK @foddy1337" title="VK @foddy1337">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 18.4c-5.6 0-8.8-3.8-8.9-10.2h2.8c.1 4.6 2.1 6.6 3.7 7V8.2h2.7v3.9c1.5-.2 3.2-1.9 3.7-3.9h2.7c-.4 2.4-2.3 4.2-3.6 4.9 1.3.6 3.5 2.2 4.3 5.1h-2.9c-.6-1.9-2.2-3.4-4.2-3.6v3.6h-.1Z"/></svg>
+              <svg class="brand-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.8 18.4c-5.6 0-8.8-3.8-8.9-10.2h2.8c.1 4.6 2.1 6.6 3.7 7V8.2h2.7v3.9c1.5-.2 3.2-1.9 3.7-3.9h2.7c-.4 2.4-2.3 4.2-3.6 4.9 1.3.6 3.5 2.2 4.3 5.1h-2.9c-.6-1.9-2.2-3.4-4.2-3.6v3.6h-.1Z"/></svg>
             </a>
-            <a class="social" href="mailto:kirya.domantsev@bk.ru" aria-label="Email">@</a>
+            <a class="social" href="mailto:kirya.domantsev@bk.ru" aria-label="Email">
+              <span class="ico ico-at" aria-hidden="true"></span>
+            </a>
           </div>
         </div>
-        <p>© <span id="year"></span> foddyzorich · @foddy1337</p>
+        <div class="foot-meta">
+          <p class="copy">© <span id="year"></span> foddyzorich · @foddy1337</p>
+          <a class="made-by" href="https://foddy.studio" target="_blank" rel="noopener">
+            <span class="made-by-mark" aria-hidden="true"></span>
+            <span class="made-by-label">Сделано</span>
+            <span class="made-by-name">foddy.studio</span>
+          </a>
+        </div>
       </footer>
     </div>
 
@@ -200,6 +329,20 @@
 
       <div class="case-copy case-reveal" id="project-intro"></div>
 
+      <section class="ba-block case-reveal" id="project-ba" hidden>
+        <div class="ba-head">
+          <h3>До и после</h3>
+          <div class="ba-tabs" role="tablist" aria-label="До и после">
+            <button class="ba-tab is-active" type="button" data-ba="before" role="tab" aria-selected="true">До</button>
+            <button class="ba-tab" type="button" data-ba="after" role="tab" aria-selected="false">После</button>
+          </div>
+        </div>
+        <div class="ba-stage">
+          <div class="ba-pane is-active" data-ba-pane="before" id="project-ba-before"></div>
+          <div class="ba-pane" data-ba-pane="after" id="project-ba-after" hidden></div>
+        </div>
+      </section>
+
       <div class="shot-frame case-reveal">
         <div class="shot-gallery" id="project-gallery"></div>
       </div>
@@ -216,26 +359,29 @@
 
       <section class="block case-reveal">
         <div class="block-head">
-          <p class="meta-dot">Другие проекты</p>
+          <p class="meta-dot" id="other-label">Другие проекты</p>
         </div>
         <div class="rows" id="other-projects"></div>
       </section>
 
       <section class="cta case-reveal">
         <h2>Давайте сделаем проект</h2>
-        <p>Напишите коротко задачу — сайт, редизайн или бот.</p>
+        <p>Напишите коротко задачу — сайт, редизайн или магазин.</p>
         <div class="actions center">
           <a class="btn btn-tg" href="https://t.me/foddy1337" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.3 3.7 11.2c-1.2.5-1.2 1.1-.2 1.4l4.6 1.4 1.8 5.4c.2.6.4.8 1 .8.6 0 .9-.3 1.2-.6l2.7-2.6 5.6 4.1c1 .6 1.8.3 2-.9L23 5.6c.3-1.4-.5-2-1.5-1.3Z"/></svg>
+            <span class="ico ico-telegram" aria-hidden="true"></span>
             Telegram @foddy1337
           </a>
           <a class="btn btn-vk" href="https://vk.com/foddy1337" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.8 18.4c-5.6 0-8.8-3.8-8.9-10.2h2.8c.1 4.6 2.1 6.6 3.7 7V8.2h2.7v3.9c1.5-.2 3.2-1.9 3.7-3.9h2.7c-.4 2.4-2.3 4.2-3.6 4.9 1.3.6 3.5 2.2 4.3 5.1h-2.9c-.6-1.9-2.2-3.4-4.2-3.6v3.6h-.1Z"/></svg>
+            <svg class="brand-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.8 18.4c-5.6 0-8.8-3.8-8.9-10.2h2.8c.1 4.6 2.1 6.6 3.7 7V8.2h2.7v3.9c1.5-.2 3.2-1.9 3.7-3.9h2.7c-.4 2.4-2.3 4.2-3.6 4.9 1.3.6 3.5 2.2 4.3 5.1h-2.9c-.6-1.9-2.2-3.4-4.2-3.6v3.6h-.1Z"/></svg>
             VK @foddy1337
           </a>
-          <a class="btn btn-dark" href="mailto:kirya.domantsev@bk.ru"><span class="plus">+</span> Написать</a>
+          <a class="btn btn-dark" href="mailto:kirya.domantsev@bk.ru">
+            <span class="ico ico-write" aria-hidden="true"></span>
+            Написать
+          </a>
           <button class="btn btn-outline" type="button" data-email="kirya.domantsev@bk.ru">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M6 16V6a2 2 0 0 1 2-2h10"/></svg>
+            <span class="ico ico-copy" aria-hidden="true"></span>
             Скопировать email
           </button>
         </div>
@@ -244,6 +390,62 @@
   </div>
 
   <div class="toast" id="toast" hidden>Email скопирован</div>
+
+  <div class="list-modal" id="list-modal" hidden>
+    <button class="list-backdrop" type="button" data-close-list aria-label="Закрыть"></button>
+    <div class="list-sheet" role="dialog" aria-modal="true" aria-labelledby="list-title">
+      <div class="list-sheet-head">
+        <div>
+          <p class="meta-dot" id="list-tag">Список</p>
+          <h2 id="list-title">Все</h2>
+        </div>
+        <button class="list-close" type="button" data-close-list aria-label="Закрыть">×</button>
+      </div>
+      <div class="list-body" id="list-body"></div>
+    </div>
+  </div>
+
+  <div class="service-modal" id="service-modal" hidden>
+    <button class="service-backdrop" type="button" data-close-service aria-label="Закрыть"></button>
+    <div class="service-sheet" role="dialog" aria-modal="true" aria-labelledby="service-title">
+      <div class="service-sheet-head">
+        <span class="service-icon soft" id="service-icon" aria-hidden="true"></span>
+        <div>
+          <p class="meta-dot" id="service-tag">Услуга</p>
+          <h2 id="service-title">Услуга</h2>
+        </div>
+        <button class="service-close" type="button" data-close-service aria-label="Закрыть">×</button>
+      </div>
+      <p class="service-lead" id="service-lead"></p>
+      <div class="service-facts">
+        <div>
+          <span>Тестовый вариант</span>
+          <strong id="service-test">1–2 дня</strong>
+        </div>
+        <div>
+          <span>Готовый вариант</span>
+          <strong id="service-full">3–7 дней</strong>
+        </div>
+        <div>
+          <span>Цена</span>
+          <strong id="service-price">Индивидуально</strong>
+        </div>
+      </div>
+      <div class="service-body">
+        <h3>Что делаю</h3>
+        <ul id="service-list"></ul>
+        <p class="service-note" id="service-note"></p>
+      </div>
+      <div class="service-actions">
+        <a class="btn btn-tg" id="service-tg" href="https://t.me/foddy1337" target="_blank" rel="noopener">
+          <span class="ico ico-telegram" aria-hidden="true"></span>
+          Обсудить в Telegram
+        </a>
+        <button class="btn btn-outline" type="button" data-close-service>Закрыть</button>
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 </html>
