@@ -21,31 +21,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260807c">
+  <link rel="stylesheet" href="css/styles.css?v=20260807d">
 </head>
 <body>
   <header class="nav-bar">
     <nav class="nav-icons" aria-label="Навигация">
-      <a href="#top" class="nav-icon is-active" data-panel="home" aria-label="Главная">
+      <a href="#top" class="nav-icon is-active" data-panel="home" data-i18n-aria="nav.home" aria-label="Главная">
         <span class="ico ico-home" aria-hidden="true"></span>
       </a>
-      <a href="#about" class="nav-icon" data-panel="home" aria-label="Обо мне">
+      <a href="#about" class="nav-icon" data-panel="home" data-i18n-aria="nav.about" aria-label="Обо мне">
         <span class="ico ico-person" aria-hidden="true"></span>
       </a>
-      <a href="#works" class="nav-icon" data-panel="home" aria-label="Проекты">
+      <a href="#works" class="nav-icon" data-panel="home" data-i18n-aria="nav.works" aria-label="Проекты">
         <span class="ico ico-projects" aria-hidden="true"></span>
       </a>
-      <a href="#services" class="nav-icon" data-panel="home" aria-label="Услуги">
+      <a href="#services" class="nav-icon" data-panel="home" data-i18n-aria="nav.services" aria-label="Услуги">
         <span class="ico ico-services" aria-hidden="true"></span>
       </a>
     </nav>
     <div class="nav-actions">
-      <button class="theme-toggle" type="button" aria-label="Тема">
+      <button class="lang-toggle" type="button" data-lang-toggle data-i18n="nav.lang" aria-label="Language">EN</button>
+      <button class="theme-toggle" type="button" data-i18n-aria="nav.theme" aria-label="Тема">
         <span class="ico ico-theme" aria-hidden="true"></span>
       </button>
       <a class="btn btn-dark btn-sm" href="#contact">
         <span class="ico ico-write" aria-hidden="true"></span>
-        Написать
+        <span data-i18n="nav.write">Написать</span>
       </a>
     </div>
   </header>
@@ -55,17 +56,18 @@
     <div class="panel is-active" id="panel-home" data-panel-view="home">
       <section class="hero" id="about">
         <div class="hero-top">
-          <p class="meta-dot">Веб-разработчик</p>
-          <span class="status-pill"><i></i> Открыт к проектам</span>
+          <p class="meta-dot" data-i18n="hero.role">Веб-разработчик</p>
+          <span class="status-pill"><i></i> <span data-i18n="hero.status">Открыт к проектам</span></span>
         </div>
         <div class="hero-row">
           <div class="hero-copy">
-            <h1>Я Кирилл</h1>
-            <p>Делаю сайты под задачу бизнеса: лендинги, редизайн и магазины, ботов.</p>
+            <h1 data-i18n="hero.title">Я Кирилл</h1>
+            <p data-i18n="hero.text">Делаю сайты под задачу бизнеса: лендинги, редизайн и магазины, ботов.</p>
+            <p class="hero-reply" data-i18n="hero.reply">Отвечаю в Telegram в течение часа</p>
             <div class="actions">
               <a class="btn btn-dark" href="#contact">
                 <span class="ico ico-write" aria-hidden="true"></span>
-                Написать
+                <span data-i18n="hero.write">Написать</span>
               </a>
               <a class="btn btn-outline" href="https://t.me/foddy1337" target="_blank" rel="noopener">
                 <span class="ico ico-telegram" aria-hidden="true"></span>
@@ -77,7 +79,7 @@
               </a>
               <button class="btn btn-outline" type="button" data-email="kirya.domantsev@bk.ru">
                 <span class="ico ico-copy" aria-hidden="true"></span>
-                Скопировать email
+                <span data-i18n="hero.copy">Скопировать email</span>
               </button>
             </div>
           </div>
@@ -89,15 +91,15 @@
 
       <section class="block" id="works">
         <div class="block-head">
-          <p class="meta-dot">Проекты</p>
-          <button class="chip chip-btn" type="button" data-all="works" aria-haspopup="dialog">Все →</button>
+          <p class="meta-dot" data-i18n="works.title">Проекты</p>
+          <button class="chip chip-btn" type="button" data-all="works" aria-haspopup="dialog"><span data-i18n="works.all">Все →</span></button>
         </div>
         <div class="rows">
           <button class="row" type="button" data-open="profite">
             <span class="row-icon"><img src="assets/icons/profite.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
               <strong>ProfiTE</strong>
-              <small>Сайт · 1С, B2B лендинг</small>
+              <small data-i18n="works.profite">Сайт · 1С, B2B лендинг</small>
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
@@ -105,7 +107,7 @@
             <span class="row-icon"><img src="assets/icons/bots.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
               <strong>ProfiTE · бот</strong>
-              <small>Telegram / Max · подсчёт обновлений</small>
+              <small data-i18n="works.bots">Telegram / Max · подсчёт обновлений</small>
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
@@ -114,15 +116,15 @@
 
       <section class="block" id="portfolio">
         <div class="block-head">
-          <p class="meta-dot">Портфолио</p>
-          <button class="chip chip-btn" type="button" data-all="portfolio" aria-haspopup="dialog">Все →</button>
+          <p class="meta-dot" data-i18n="portfolio.title">Портфолио</p>
+          <button class="chip chip-btn" type="button" data-all="portfolio" aria-haspopup="dialog"><span data-i18n="portfolio.all">Все →</span></button>
         </div>
         <div class="rows">
           <button class="row" type="button" data-open="petrol">
             <span class="row-icon"><img src="assets/icons/petrol.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
               <strong>Petrol-Люкс</strong>
-              <small>Набросок · АЗС, one-pager</small>
+              <small data-i18n="portfolio.petrol">Набросок · АЗС, one-pager</small>
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
@@ -130,7 +132,7 @@
             <span class="row-icon"><img src="assets/icons/globit.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
               <strong>Glob-IT</strong>
-              <small>Набросок · IT, lavender bento</small>
+              <small data-i18n="portfolio.globit">Набросок · IT, lavender bento</small>
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
@@ -138,7 +140,7 @@
             <span class="row-icon"><img src="assets/icons/inmis.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
               <strong>Inmis</strong>
-              <small>Набросок · медтех-лендинг</small>
+              <small data-i18n="portfolio.inmis">Набросок · медтех-лендинг</small>
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
@@ -146,70 +148,133 @@
             <span class="row-icon"><img src="assets/icons/zoomir.webp" alt="" width="40" height="40" loading="lazy" decoding="async"></span>
             <span class="row-text">
               <strong>Зоомир</strong>
-              <small>Набросок · зоомагазин</small>
+              <small data-i18n="portfolio.zoomir">Набросок · зоомагазин</small>
             </span>
             <span class="chev" aria-hidden="true">›</span>
           </button>
         </div>
       </section>
 
+      <section class="block" id="why">
+        <div class="block-head">
+          <p class="meta-dot" data-i18n="why.title">Почему я</p>
+        </div>
+        <div class="why-list">
+          <div class="why-item">
+            <strong data-i18n="why.1.t">Сначала задача, потом визуал</strong>
+            <p data-i18n="why.1.d">Собираю маршрут к заявке, а не просто «красивую картинку».</p>
+          </div>
+          <div class="why-item">
+            <strong data-i18n="why.2.t">Быстрый черновик</strong>
+            <p data-i18n="why.2.d">Тестовый вариант за 1–2 дня — сразу видно направление.</p>
+          </div>
+          <div class="why-item">
+            <strong data-i18n="why.3.t">Сайты и боты рядом</strong>
+            <p data-i18n="why.3.d">Могу связать лендинг, Telegram/Max и логику 1С в одном контуре.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="process">
+        <div class="block-head">
+          <p class="meta-dot" data-i18n="process.title">Как работаем</p>
+        </div>
+        <ol class="process-list">
+          <li>
+            <span class="process-num">01</span>
+            <div>
+              <strong data-i18n="process.1.t">Бриф</strong>
+              <p data-i18n="process.1.d">Цель, аудитория, примеры и доступы — коротко в Telegram.</p>
+            </div>
+          </li>
+          <li>
+            <span class="process-num">02</span>
+            <div>
+              <strong data-i18n="process.2.t">Черновик</strong>
+              <p data-i18n="process.2.d">За 1–2 дня показываю тестовый вариант под задачу.</p>
+            </div>
+          </li>
+          <li>
+            <span class="process-num">03</span>
+            <div>
+              <strong data-i18n="process.3.t">Правки</strong>
+              <p data-i18n="process.3.d">1–2 круга правок по согласованному направлению.</p>
+            </div>
+          </li>
+          <li>
+            <span class="process-num">04</span>
+            <div>
+              <strong data-i18n="process.4.t">Запуск</strong>
+              <p data-i18n="process.4.d">Финал, адаптив, передача файлов или публикация.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
       <section class="block" id="services">
         <div class="block-head">
-          <p class="meta-dot">Услуги</p>
+          <p class="meta-dot" data-i18n="services.title">Услуги</p>
         </div>
         <div class="rows">
           <button class="row" type="button" data-service="redesign">
             <span class="row-icon soft"><span class="ico ico-redesign" aria-hidden="true"></span></span>
             <span class="row-text">
-              <strong>Редизайн сайтов</strong>
-              <small>Обновить внешний вид и структуру</small>
+              <strong data-i18n="services.redesign.t">Редизайн сайтов</strong>
+              <small data-i18n="services.redesign.d">Обновить внешний вид и структуру</small>
             </span>
-            <span class="tag">Сайты</span>
+            <span class="tag" data-i18n="services.from">от 3 000 ₽</span>
             <span class="ext" aria-hidden="true">↗</span>
           </button>
           <button class="row" type="button" data-service="landing">
             <span class="row-icon soft"><span class="ico ico-landing" aria-hidden="true"></span></span>
             <span class="row-text">
-              <strong>Лендинги под оффер</strong>
-              <small>Одна страница под задачу и заявку</small>
+              <strong data-i18n="services.landing.t">Лендинги под оффер</strong>
+              <small data-i18n="services.landing.d">Одна страница под задачу и заявку</small>
             </span>
-            <span class="tag">Лендинг</span>
+            <span class="tag" data-i18n="services.from">от 3 000 ₽</span>
             <span class="ext" aria-hidden="true">↗</span>
           </button>
           <button class="row" type="button" data-service="shop">
             <span class="row-icon soft"><span class="ico ico-dog" aria-hidden="true"></span></span>
             <span class="row-text">
-              <strong>Магазины и бренды</strong>
-              <small>Каталог, бренд, путь к покупке</small>
+              <strong data-i18n="services.shop.t">Магазины и бренды</strong>
+              <small data-i18n="services.shop.d">Каталог, бренд, путь к покупке</small>
             </span>
-            <span class="tag">Бренд</span>
+            <span class="tag" data-i18n="services.from">от 3 000 ₽</span>
             <span class="ext" aria-hidden="true">↗</span>
           </button>
           <button class="row" type="button" data-service="bots">
             <span class="row-icon soft"><span class="ico ico-bots" aria-hidden="true"></span></span>
             <span class="row-text">
-              <strong>Боты Telegram и Max</strong>
-              <small>Автоответы, заявки, сценарии</small>
+              <strong data-i18n="services.bots.t">Боты Telegram и Max</strong>
+              <small data-i18n="services.bots.d">Автоответы, заявки, сценарии</small>
             </span>
-            <span class="tag">Боты</span>
+            <span class="tag" data-i18n="services.from">от 3 000 ₽</span>
             <span class="ext" aria-hidden="true">↗</span>
           </button>
           <button class="row" type="button" data-service="update1c">
             <span class="row-icon soft"><span class="ico ico-boxes" aria-hidden="true"></span></span>
             <span class="row-text">
-              <strong>Обновление 1С и ККТ</strong>
-              <small>Обновления, настройка, онлайн-кассы</small>
+              <strong data-i18n="services.update1c.t">Обновление 1С и ККТ</strong>
+              <small data-i18n="services.update1c.d">Обновления, настройка, онлайн-кассы</small>
             </span>
-            <span class="tag">1С</span>
+            <span class="tag" data-i18n="services.from">от 3 000 ₽</span>
             <span class="ext" aria-hidden="true">↗</span>
           </button>
         </div>
       </section>
 
+      <section class="block" id="stack">
+        <div class="block-head">
+          <p class="meta-dot" data-i18n="stack.title">Стек</p>
+        </div>
+        <p class="stack-line" data-i18n="stack.text">HTML, CSS, JavaScript · адаптив · лендинги · Telegram / Max · 1С и ККТ · UI-наброски</p>
+      </section>
+
       <section class="block" id="reviews">
         <div class="block-head">
-          <p class="meta-dot">Отзывы</p>
-          <button class="chip chip-btn" type="button" data-all="reviews" aria-haspopup="dialog">Все →</button>
+          <p class="meta-dot" data-i18n="reviews.title">Отзывы</p>
+          <button class="chip chip-btn" type="button" data-all="reviews" aria-haspopup="dialog"><span data-i18n="reviews.all">Все →</span></button>
         </div>
         <div class="review-carousel" data-review-carousel>
           <div class="review-stage" aria-live="polite">
@@ -230,37 +295,90 @@
         </div>
       </section>
 
-      <section class="block" id="faq">
+      <section class="block" id="blog">
         <div class="block-head">
-          <p class="meta-dot">FAQ</p>
+          <p class="meta-dot" data-i18n="blog.title">Заметки</p>
+          <button class="chip chip-btn" type="button" data-all="blog" aria-haspopup="dialog"><span data-i18n="blog.all">Все →</span></button>
         </div>
-        <div class="faq" id="faq-list">
-          <details class="faq-item">
-            <summary>Сколько занимает работа?</summary>
-            <p>Тестовый вариант обычно 1–2 дня, готовый — от 3 до 7 дней. Срок зависит от объёма блоков, текстов и правок.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Сколько правок входит?</summary>
-            <p>В рамках задачи — 1–2 круга правок по согласованному макету. Крупные новые блоки считаем отдельно.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Что нужно от меня для старта?</summary>
-            <p>Коротко: цель сайта, контакты, примеры которые нравятся, тексты/фото если есть, доступ к текущему сайту.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Как оплата?</summary>
-            <p>Обычно предоплата 50% на старт, остаток после согласования и перед передачей/публикацией.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Чем тестовый вариант отличается от готового?</summary>
-            <p>Тестовый — быстрый каркас под задачу. Готовый — финальный визуал, адаптив, правки и подготовка к запуску.</p>
-          </details>
+        <div class="rows" id="blog-preview"></div>
+      </section>
+
+      <section class="block" id="certs">
+        <div class="block-head">
+          <p class="meta-dot" data-i18n="certs.title">Сертификаты</p>
+        </div>
+        <p class="section-note" data-i18n="certs.note">Пока заглушки — заменю на реальные.</p>
+        <div class="rows">
+          <div class="row is-static">
+            <span class="row-icon soft"><span class="cert-mark">1С</span></span>
+            <span class="row-text">
+              <strong data-i18n="certs.1.t">1С:Профессионал</strong>
+              <small data-i18n="certs.1.d">Заглушка · конфигурации и обновления</small>
+            </span>
+            <span class="tag">stub</span>
+          </div>
+          <div class="row is-static">
+            <span class="row-icon soft"><span class="cert-mark">WEB</span></span>
+            <span class="row-text">
+              <strong data-i18n="certs.2.t">Веб-интерфейсы</strong>
+              <small data-i18n="certs.2.d">Заглушка · лендинги и адаптив</small>
+            </span>
+            <span class="tag">stub</span>
+          </div>
+          <div class="row is-static">
+            <span class="row-icon soft"><span class="cert-mark">BOT</span></span>
+            <span class="row-text">
+              <strong data-i18n="certs.3.t">Боты и интеграции</strong>
+              <small data-i18n="certs.3.d">Заглушка · Telegram / Max сценарии</small>
+            </span>
+            <span class="tag">stub</span>
+          </div>
         </div>
       </section>
 
+      <section class="block" id="location">
+        <div class="block-head">
+          <p class="meta-dot" data-i18n="map.title">Где я</p>
+        </div>
+        <div class="map-block">
+          <div class="map-copy">
+            <strong data-i18n="map.city">Иваново</strong>
+            <p data-i18n="map.text">Работаю удалённо и на месте. Удобно созвониться или встретиться в городе.</p>
+            <a class="btn btn-outline btn-sm" href="https://www.openstreetmap.org/#map=12/56.9994/40.9728" target="_blank" rel="noopener">
+              <span data-i18n="map.open">Открыть карту</span>
+            </a>
+          </div>
+          <div class="map-frame">
+            <iframe
+              title="Ivanovo map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=40.85%2C56.94%2C41.10%2C57.05&amp;layer=mapnik&amp;marker=56.9994%2C40.9728"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="faq">
+        <div class="block-head">
+          <p class="meta-dot" data-i18n="faq.title">FAQ</p>
+        </div>
+        <div class="faq" id="faq-list"></div>
+      </section>
+
       <section class="cta" id="contact">
-        <h2>Давайте сделаем проект</h2>
-        <p>Напишите коротко задачу — сайт, редизайн, магазин или бота.</p>
+        <h2 data-i18n="contact.title">Давайте сделаем проект</h2>
+        <p data-i18n="contact.text">Напишите коротко задачу — сайт, редизайн, магазин или бота.</p>
+        <form class="lead-form" id="lead-form">
+          <label class="lead-label" for="lead-text" data-i18n="contact.form">Или одной строкой</label>
+          <div class="lead-row">
+            <input id="lead-text" name="task" type="text" maxlength="240" data-i18n-placeholder="contact.ph" placeholder="Нужен лендинг / редизайн / бот…" required>
+            <button class="btn btn-tg" type="submit">
+              <span class="ico ico-telegram" aria-hidden="true"></span>
+              <span data-i18n="contact.send">В Telegram</span>
+            </button>
+          </div>
+        </form>
         <div class="actions center">
           <a class="btn btn-tg" href="https://t.me/foddy1337" target="_blank" rel="noopener">
             <span class="ico ico-telegram" aria-hidden="true"></span>
@@ -272,18 +390,18 @@
           </a>
           <a class="btn btn-dark" href="mailto:kirya.domantsev@bk.ru">
             <span class="ico ico-write" aria-hidden="true"></span>
-            Написать
+            <span data-i18n="nav.write">Написать</span>
           </a>
           <button class="btn btn-outline" type="button" data-email="kirya.domantsev@bk.ru">
             <span class="ico ico-copy" aria-hidden="true"></span>
-            Скопировать email
+            <span data-i18n="contact.copy">Скопировать email</span>
           </button>
         </div>
       </section>
 
       <footer class="foot">
         <div class="follow">
-          <span>Соцсети</span>
+          <span data-i18n="foot.social">Соцсети</span>
           <div class="socials">
             <a class="social social-tg" href="https://t.me/foddy1337" target="_blank" rel="noopener" aria-label="Telegram @foddy1337" title="Telegram @foddy1337">
               <span class="ico ico-telegram" aria-hidden="true"></span>
@@ -300,7 +418,7 @@
           <p class="copy">© <span id="year"></span> foddyzorich · @foddy1337</p>
           <a class="made-by" href="https://foddy.studio" target="_blank" rel="noopener">
             <span class="made-by-mark" aria-hidden="true"></span>
-            <span class="made-by-label">Сделано</span>
+            <span class="made-by-label" data-i18n="foot.made">Сделано</span>
             <span class="made-by-name">foddy.studio</span>
           </a>
         </div>
@@ -309,7 +427,7 @@
 
     <!-- PROJECT DETAIL -->
     <div class="panel" id="panel-project" data-panel-view="project" hidden>
-      <button class="back" type="button" id="back-home">← Назад</button>
+      <button class="back" type="button" id="back-home" data-i18n="case.back">← Назад</button>
 
       <div class="meta-box case-reveal" id="project-meta"></div>
 
@@ -319,6 +437,10 @@
           <p class="meta-dot" id="project-kind">Проект</p>
           <h1 id="project-title">Проект</h1>
           <p id="project-desc"></p>
+          <a class="btn btn-outline btn-sm project-live" id="project-live" href="#" target="_blank" rel="noopener" hidden>
+            <span data-i18n="case.live">Открыть сайт</span>
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
 
@@ -360,8 +482,8 @@
       </section>
 
       <section class="cta case-reveal">
-        <h2>Давайте сделаем проект</h2>
-        <p>Напишите коротко задачу — сайт, редизайн или магазин.</p>
+        <h2 data-i18n="case.cta.t">Давайте сделаем проект</h2>
+        <p data-i18n="case.cta.d">Напишите коротко задачу — сайт, редизайн или магазин.</p>
         <div class="actions center">
           <a class="btn btn-tg" href="https://t.me/foddy1337" target="_blank" rel="noopener">
             <span class="ico ico-telegram" aria-hidden="true"></span>
@@ -373,18 +495,18 @@
           </a>
           <a class="btn btn-dark" href="mailto:kirya.domantsev@bk.ru">
             <span class="ico ico-write" aria-hidden="true"></span>
-            Написать
+            <span data-i18n="nav.write">Написать</span>
           </a>
           <button class="btn btn-outline" type="button" data-email="kirya.domantsev@bk.ru">
             <span class="ico ico-copy" aria-hidden="true"></span>
-            Скопировать email
+            <span data-i18n="case.copy">Скопировать email</span>
           </button>
         </div>
       </section>
     </div>
   </div>
 
-  <div class="toast" id="toast" hidden>Email скопирован</div>
+  <div class="toast" id="toast" hidden data-i18n="toast.email">Email скопирован</div>
 
   <div class="list-modal" id="list-modal" hidden>
     <button class="list-backdrop" type="button" data-close-list aria-label="Закрыть"></button>
@@ -441,6 +563,7 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=20260807c"></script>
+  <script src="js/i18n.js?v=20260807d"></script>
+  <script src="js/main.js?v=20260807d"></script>
 </body>
 </html>
